@@ -3,6 +3,10 @@ body {
   color: #000000;
 }
 
+textarea {
+  resize: vertical;
+}
+
 a.title_text {
   color: #050044;
   text-decoration:none;
