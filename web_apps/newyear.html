@@ -1,0 +1,103 @@
+<html lang="ja">
+
+<title>新年までのカウントダウン - Yuka0745's Site</title>
+
+<script src="uigen_htp.js"></script>
+
+<head>
+<link rel="stylesheet" type="text/css" href="../index.css">
+<link rel="icon" href="favicon.ico">
+<meta charset="utf-8"/>
+<meta name="Description" content="新年まであと何日何時間何分何秒かを見ることができます!
+また、新年からどのくらい経ったか見ることもできます!"/>
+<meta name="keywords" content="Yuka0745,御殿場,ごて鯖,Windows,Minecraft,BE,PE,MCBE,MCPE,マイクラ,マインクラフト,まいくら,まいんくらふと,minecraft,mcpe,mcbe,JSON,json,json整形,JSON整形,整形"/>
+<meta name="theme-color" content="#0076ff" />
+<meta property="og:description" content="新年まであと何日何時間何分何秒かを見ることができます!
+また、新年からどのくらい経ったか見ることもできます!"/>
+<meta property="og:site_name" content="ごて鯖" />
+<meta property="og:title" content="新年までのカウントダウン - Yuka0745's Site" />
+<meta property="og:image" content="https://gotemba912.github.io/images/app_icon.png"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<font style="font-family: 'arial',sans-serif;">
+</head>
+
+<script src="../header.js"></script>
+
+<div class="toto">
+<a href="https://gotemba912.github.io">ホーム</a> -> <a href="https://gotemba912.github.io/web_apps/index.html">Webアプリ一覧</a> -> 新年までのカウントダウン
+</div>
+
+<br>
+
+<div class="pack_flame">
+<img src="../images/app_icon.png" witdh=80 height=80>
+<div class="text_content">
+<span class="pack_name">新年までのカウントダウン</span><br>
+新年まであと何日何時間何分何秒かを見ることができます!<br>また、新年からどのくらい経ったか見ることもできます!
+</div>
+</div>
+
+<h2>
+
+<span class="header_text">新年まであと何日かカウントダウンします</span>
+
+</h2>
+
+
+<p>何年までのカウントダウンを表示しますか?</p>
+<form>
+<input type="number" name="year" id="year" min="1900" value="10" style="width:100%; height:25px;" required>
+<input type="submit" value="適用" style="width:100%; height:30px;">
+
+</form>
+
+<div style="text-align: center;">
+<script type="text/javascript">
+
+let nextyear = 0
+
+if (location.search.startsWith("?year=")) {
+  nextyear = Number(location.search.replace("?year=",""))
+  if (isNaN(nextyear)) {
+    let nowtime = new Date()
+    nextyear = nowtime.getFullYear() + 1
+  }
+} else {
+  let nowtime = new Date()
+  nextyear = nowtime.getFullYear() + 1
+}
+
+document.getElementById("year").value = nextyear
+
+
+var year = nextyear.toString();var month = "1";var day = "1";var hour = "0";var minute = "0";var centi = "1";
+var convert = "0";var roop = "";
+var cnt1 = "日";var cnt2 = "時間";var cnt3 = "分";var cnt4 = "秒";
+var baseoffset = "none";var cuttime = "";
+var br1 = "1";var br2 = "";var br3 = "";var br4 = "";
+var com1 = `${nextyear}年まであと..`;var com2 = "";var com3 = "";var com4 = "あけおめーー!!";var end = "1";
+var width = "400";var height = "100";
+var font = "arial";var font2 = "0";var size = "31";var t_size = "30";var l_height = "32";var t_height = "30";var bold = "1";var italic = "";var line = "";
+var space = "17px 0px 0px 0px";
+var align = "2";var img = "";
+var color1 = "000000";var color2 = "FF0000";var color3 = "E3DFFF";
+
+</script>
+<script type="text/javascript" src="https://countdown.reportitle.com/js/neo1_01.js"></script><a href="https://countdown.reportitle.com/">カウントダウンタイマー</a><script type="text/javascript" src="https://countdown.reportitle.com/js/neo2.js"></script>
+
+</div>
+
+<p>使用ツール: <a href="https://countdown.reportitle.com/" target="_blank">カウントダウンタイマーNEO</a></p>
+
+<h2>
+
+<span class="header_text">変更履歴</span>
+
+</h2>
+
+2022/11/19 - リリース<br>
+
+<script src="../footer.js"></script>
+
+</body>
+</html>
