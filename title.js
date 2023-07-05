@@ -1,0 +1,1 @@
+document.write(`<div class="headr"><br><BR><BR><BR><BR><BR><h2o>◍優夢色◍</h2o><br><h3o>夢が広がる優しい世界。</h3o></div>`)

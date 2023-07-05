@@ -1,78 +1,73 @@
 <html lang="ja">
 
-<title>JSON エラーキャッチャー＆フォーマッター - Yuka0745's Site</title>
+<head>
+    <title>JSON エラーキャッチャー＆フォーマッター - 優夢色</title>
+    <link rel="stylesheet" type="text/css" href="../style.css">
+    <link rel="icon" href="https://gotemba912.github.io/favicon.ico">
+    <meta charset="utf-8" />
+    <meta name="Description" content="JSONの構文ミスをチェックしたり整形して見栄えの良いJSONにすることができます!" />
+    <meta name="keywords"
+        content="Yuka0745,御殿場,ごて鯖,Windows,Minecraft,BE,PE,MCBE,MCPE,マイクラ,マインクラフト,まいくら,まいんくらふと,minecraft,mcpe,mcbe" />
+    <meta name="theme-color" content="#42ce6c" />
+    <meta property="og:description" content="JSONの構文ミスをチェックしたり整形して見栄えの良いJSONにすることができます!" />
+    <meta property="og:site_name" content="ゆかやま" />
+    <meta property="og:title" content="JSON エラーキャッチャー＆フォーマッター - 優夢色" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+</head>
 
 <script src="json_formatter.js"></script>
 <script src="jsonlint.js"></script>
 
-<head>
-<link rel="stylesheet" type="text/css" href="../index.css">
-<link rel="icon" href="favicon.ico">
-<meta charset="utf-8"/>
-<meta name="Description" content="JSONの構文ミスをチェックしたり整形して見栄えの良いJSONにすることができます!"/>
-<meta name="keywords" content="Yuka0745,御殿場,ごて鯖,Windows,Minecraft,BE,PE,MCBE,MCPE,マイクラ,マインクラフト,まいくら,まいんくらふと,minecraft,mcpe,mcbe,JSON,json,json整形,JSON整形,整形"/>
-<meta name="theme-color" content="#0076ff" />
-<meta property="og:description" content="JSONの構文ミスをチェックしたり整形して見栄えの良いJSONにすることができます!"/>
-<meta property="og:site_name" content="ごて鯖" />
-<meta property="og:title" content="JSON エラーキャッチャー＆フォーマッター - Yuka0745's Site" />
-<meta property="og:image" content="https://gotemba912.github.io/images/app_icon.png"/>
-<meta name="viewport" content="width=device-width,initial-scale=1.0">
-<font style="font-family: 'arial',sans-serif;">
-</head>
+<body>
+    <script src="../header.js"></script>
+    <div id="main_content">
+        <div style="height: 45px;"></div>
+        <script src="../title.js"></script>
+        <div class="contenten">
+            <div class="pack_flame">
+                <img src="../images/app_icon.png" witdh=80 height=80>
+                <div class="text_content">
+                    <span class="pack_name">JSON エラーキャッチャー＆フォーマッター</span><br>
+                    JSONの構文ミスをチェックしたり整形して見栄えの良いJSONにすることができます!
+                </div>
+            </div>
 
-<script src="../header.js"></script>
+            <p>JSONを入力、コピペ、またはアップロードしてください↓</p>
 
-<div class="toto">
-<a href="https://gotemba912.github.io">ホーム</a> -> <a href="https://gotemba912.github.io/web_apps/index.html">Webアプリ一覧</a> -> JSON エラーキャッチャー＆フォーマッター
-</div>
+            <input type="file" id="upload_json" style="width:100%; height:30px;">
+            <textarea id="json_file" style="width:100%; height:200px;"></textarea>
+            <input type="button" onclick="format_json();" value="エラーキャッチ＆整形" style="width:100%; height:30px;">
+            <form name="1line">
+                <div>
+                    <input type="checkbox" id="1line" name="1line" value="1line">
+                    <label for="1line">JSONを一行にする</label>
+                </div>
+            </form>
+            <p>↓結果↓</p>
 
-<br>
+            <h3>
+                <span id="correct"></span>
+            </h3>
 
-<div class="pack_flame">
-<img src="../images/app_icon.png" witdh=80 height=80>
-<div class="text_content">
-<span class="pack_name">JSON エラーキャッチャー＆フォーマッター</span><br>
-JSONの構文ミスをチェックしたり整形して見栄えの良いJSONにすることができます!
-</div>
-</div>
+            <textarea id="result" style="width:100%; height:200px;" readonly></textarea>
+            <input type="button" id="copy_btn" onclick="copy_to_clip();" value="コピーする" style="width:100%; height:30px;"
+                disabled>
+            <input type="button" id="download_btn" onclick="download_file();" value="ダウンロード"
+                style="width:100%; height:30px;" disabled>
 
-<h2>
+                <div class="box22">
+                    <h2>変更履歴</h2>
+                </div>
+    
 
-<span class="header_text">JSONのエラーをチェックして整形する</span>
+            2021/11/19 - リリース<br>
+            2022/09/21 - JSONパースエラーの内容を詳しく表示(<a href="https://github.com/circlecell/jsonlint-mod"
+                target="_blank">https://github.com/circlecell/jsonlint-mod</a>)、 アップロード機能とダウンロード機能を追加<br>
 
-</h2>
-
-<p>JSONを入力、コピペ、またはアップロードしてください↓</p>
-
-<input type="file" id="upload_json" style="width:100%; height:30px;">
-<textarea id="json_file"  style="width:100%; height:200px;"></textarea>
-<input type="button" onclick="format_json();" value="エラーキャッチ＆整形" style="width:100%; height:30px;">
-<form name="1line">
-<div>
-    <input type="checkbox" id="1line" name="1line" value="1line">
-    <label for="1line">JSONを一行にする</label>
-</div>
-</form>
-<p>Result↓</p>
-
-<h3>
-<span id="correct"></span>
-</h3>
-
-<textarea id="result"  style="width:100%; height:200px;" readonly></textarea>
-<input type="button" id="copy_btn" onclick="copy_to_clip();" value="コピーする" style="width:100%; height:30px;" disabled>
-<input type="button" id="download_btn" onclick="download_file();" value="ダウンロード" style="width:100%; height:30px;" disabled>
-
-<h2>
-
-<span class="header_text">変更履歴</span>
-
-</h2>
-
-2021/11/19 - リリース<br>
-2022/09/21 - JSONパースエラーの内容を詳しく表示(<a href="https://github.com/circlecell/jsonlint-mod" target="_blank">https://github.com/circlecell/jsonlint-mod</a>)、 アップロード機能とダウンロード機能を追加<br>
-
-<script src="../footer.js"></script>
-
+            <script src="../footer.js"></script>
+        </div>
+    </div>
+    <div style="height: 35px;"></div>
 </body>
+
 </html>
