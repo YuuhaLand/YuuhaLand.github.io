@@ -1,0 +1,1 @@
+document.write(`<div class="headr_404"></div>`)

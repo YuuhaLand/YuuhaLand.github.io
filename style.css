@@ -31,6 +31,15 @@ textarea {
 
 }
 
+.headr_404 {
+    background: #42ce6c url(https://gotemba912.github.io/images/notfound404.png) no-repeat center / auto auto;
+    background-origin: border-box;
+    height: 300px;
+    padding-top: 10px;
+    padding-left: 20px;
+    text-align: center;
+}
+
 h2o {
     font-size: 30;
     font-weight: bold;
