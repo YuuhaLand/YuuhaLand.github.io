@@ -8,6 +8,15 @@ body {
 	background-size: 10px 10px;
 }
 
+a {
+	color: #0000ee;
+}
+
+::selection {
+  background-color: #cbe3fa;
+  color:black;
+}
+
 textarea {
   resize: vertical;
 }
