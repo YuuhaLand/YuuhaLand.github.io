@@ -1,0 +1,54 @@
+div.menulink {
+	padding-left: 30px;
+	padding-bottom: 20px;
+}
+
+body.top {
+	text-align: center;
+	background-repeat: repeat;
+	background-image: url(./image/yuuka.png);
+    background-position-y: 0px ;
+}
+
+body.server {
+	background-repeat: repeat;
+	background-image: url(./image/server.png);
+    background-position-y: 0px ;
+}
+
+body.things {
+	background-repeat: repeat;
+	background-image: url(./image/things.png);
+    background-position-y: 0px ;
+}
+
+body.kankyou {
+	background-repeat: repeat;
+	background-image: url(./image/envi.png);
+    background-position-y: 0px ;
+}
+
+table {
+    background-color: white;
+}
+
+ul{
+  list-style-type: circle;
+}
+
+h1 {
+	text-align: center;
+}
+
+.menu-item {
+    list-style: none;
+    display: inline-block;
+    padding: 10px;
+}
+
+.menu-item2 {
+    list-style: none;
+    display: inline-block;
+    padding: 5px;
+    vertical-align: top;
+}
