@@ -116,3 +116,9 @@ div.text_content {
 span.pack_name {
 	font-size: 130%;
 }
+
+span.pack_count {
+	font-size: 120%;
+    background-color: #000000a1;
+    color: white
+}
