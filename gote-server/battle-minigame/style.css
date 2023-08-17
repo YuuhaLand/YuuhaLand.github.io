@@ -1,0 +1,79 @@
+ul {
+	list-style-image: url(textures/ui/bubble.png);
+}
+
+body {
+	background-image: url(textures/ui/backimage.jpg);
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+   
+}
+
+.maikurawindow {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	width: 70%;
+	height: 80%;
+	background-color: #000000cc;
+	color: white;
+
+  overflow-y: scroll;
+  scrollbar-color: rebeccapurple green;
+  scrollbar-width: thin;
+
+  border-image-source: url(./textures/ui/dialog_background_hollow_4.png); 
+
+  border-image-slice: 229 fill;
+  border-image-width:20px;
+  border-image-outset:20px;
+  border-image-repeat:round;
+}
+
+.mokuji {
+	width: 100%;
+	display: flex;
+	justify-content: space-between;
+	
+}
+
+.mokujikoumoku {
+	width: 33%;
+	margin: 2px;
+	height: 160px;
+	background-color: gray;
+	border: solid 3px #fff;
+  border-image-source: url(./textures/ui/button_borderless_dark.png); 
+
+  border-image-slice: 229 fill;
+  border-image-width:6px;
+  border-image-outset:0px;
+  border-image-repeat:round;
+	
+	cursor: pointer;
+	text-align: center;
+}
+
+.mokujikoumoku:hover {
+  border-image-source: url(./textures/ui/button_borderless_darkhover.png); 
+}
+
+.mokujiicon {
+	width:90px;
+	height:90px;
+}
+
+.sekusyon7 {
+	color:#c5c5c5
+}
+
+a {
+	color: white
+}
+
+a:hover {
+	color: #36d51e
+}
