@@ -3,6 +3,7 @@ ul {
 }
 
 body {
+	font-family: 'arial', sans-serif;
 	background-image: url(textures/ui/backimage.jpg);
   background-position: center center;
   background-repeat: no-repeat;
