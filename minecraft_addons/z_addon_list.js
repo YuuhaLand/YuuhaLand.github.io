@@ -127,6 +127,22 @@ const adlist = {
 			github_counter: "Tabkey_Playerlist_UI",
 			github_plus: 0,
 			link: "https://github.com/Gotemba912/Tabkey_Playerlist_UI/releases/latest"
+		},
+		{
+			name: "Better Chat Animation",
+			description: "HUDのチャットを良い感じのアニメーションで表示します",
+			icon_url: "../images/minecraft_icon.png",
+			github_counter: "BetterChatAnimation",
+			github_plus: 0,
+			link: "https://github.com/Gotemba912/BetterChatAnimation/releases/latest"
+		},
+		{
+			name: "オンスクリーン効果",
+			description: "画面効果を追加します！",
+			icon_url: "https://github.com/Gotemba912/screen-effect/blob/v1.0.0/pack_icon.png?raw=true",
+			github_counter: "screen-effect",
+			github_plus: 0,
+			link: "https://github.com/Gotemba912/screen-effect/releases/latest"
 		}
 	]
 }
