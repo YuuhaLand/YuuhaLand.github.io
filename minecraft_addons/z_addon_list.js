@@ -143,6 +143,14 @@ const adlist = {
 			github_counter: "screen-effect",
 			github_plus: 0,
 			link: "https://github.com/Gotemba912/screen-effect/releases/latest"
+		},
+		{
+			name: "UIを薄くするリソースパック",
+			description: "需要無し・くだらないです。",
+			icon_url: "https://github.com/Gotemba912/usui-ui/blob/main/pack_icon.png?raw=true",
+			github_counter: "usui-ui",
+			github_plus: 0,
+			link: "https://github.com/Gotemba912/usui-ui/releases/latest"
 		}
 	]
 }
