@@ -57,6 +57,14 @@ const adlist = {
 			link: "https://github.com/Gotemba912/touch-f5/releases/latest"
 		},
 		{
+			name: "Online Player Count",
+			description: "オンラインのプレイヤー数をポーズ画面に表示します！",
+			icon_url: "https://github.com/Gotemba912/Online-Player-Count/blob/main/pack_icon.png?raw=true",
+			github_counter: "Online-Player-Count",
+			github_plus: 0,
+			link: "https://github.com/Gotemba912/Online-Player-Count/releases/latest"
+		},
+		{
 			name: "Custom boss bar UI",
 			description: "カスタムボスバーをscoreboardのsidebarで作れます。<br>/scoreboard objectives add &lt;ID&gt; dummy",
 			icon_url: "https://github.com/Gotemba912/Custom-bossbar-addon/blob/main/pack_icon.png?raw=true",
