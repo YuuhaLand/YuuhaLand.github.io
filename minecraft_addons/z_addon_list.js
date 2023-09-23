@@ -159,6 +159,14 @@ const adlist = {
 			github_counter: "usui-ui",
 			github_plus: 0,
 			link: "https://github.com/Gotemba912/usui-ui/releases/latest"
+		},
+		{
+			name: "VSync設定追加",
+			description: "v1.20.30でなぜか追加されなかったVSync(垂直同期)設定を追加します!",
+			icon_url: "https://github.com/Gotemba912/vsync-visible/blob/main/pack_icon.png?raw=true",
+			github_counter: "vsync-visible",
+			github_plus: 0,
+			link: "https://github.com/Gotemba912/vsync-visible/releases/latest"
 		}
 	]
 }
