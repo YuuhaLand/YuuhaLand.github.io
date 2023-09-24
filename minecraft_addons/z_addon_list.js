@@ -9,12 +9,12 @@ const adlist = {
 			link: "./gote-supporter.html"
 		},
 		{
-			name: "Hack Item Giver",
-			description: "Hackなどを使わずに通常では出せないアイテムやブロックを出せるようにするアドオンです!",
+			name: "Hidden Item Giver",
+			description: "隠しアイテムを簡単に入手できる!!",
 			icon_url: "../images/hack_item_giver.png",
-			github_counter: "",
-			github_plus: 0,
-			link: "./hack_item_giver.html"
+			github_counter: "hidden-item-giver",
+			github_plus: 4321,
+			link: "./hidden_item_giver.html"
 		},
 		{
 			name: "Custom UI Maker",
