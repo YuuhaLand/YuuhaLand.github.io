@@ -20,8 +20,8 @@ const adlist = {
 			name: "Custom UI Maker",
 			description: "本と羽根ペンを使って内容を自由に入力して表示できるUIを作ることができます!",
 			icon_url: "../images/custom_ui_maker.png",
-			github_counter: "",
-			github_plus: 0,
+			github_counter: "custom-ui-maker",
+			github_plus: 158,
 			link: "./custom_ui_maker.html"
 		},
 		{
