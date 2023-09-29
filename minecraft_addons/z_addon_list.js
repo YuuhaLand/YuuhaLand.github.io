@@ -167,6 +167,22 @@ const adlist = {
 			github_counter: "vsync-visible",
 			github_plus: 0,
 			link: "https://github.com/Gotemba912/vsync-visible/releases/latest"
+		},
+		{
+			name: "水の音を昔のようにする for v1.20.30",
+			description: "水のサウンドを1.20.10以前のようにします 1.20.30にのみ対応",
+			icon_url: "https://github.com/Gotemba912/fixed-water/blob/main/pack_icon.png?raw=true",
+			github_counter: "fixed-water",
+			github_plus: 0,
+			link: "https://github.com/Gotemba912/fixed-water/releases/latest"
+		},
+		{
+			name: "Safezone filler",
+			description: "より小さいGUIにできます！",
+			icon_url: "https://github.com/Gotemba912/safezone-filler/blob/main/pack_icon.png?raw=true",
+			github_counter: "safezone-filler",
+			github_plus: 0,
+			link: "https://github.com/Gotemba912/safezone-filler/releases/latest"
 		}
 	]
 }
