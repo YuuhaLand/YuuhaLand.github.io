@@ -1,0 +1,132 @@
+<html lang="ja">
+
+<head>
+  <title>Discordサーバーの情報表示- 優夢色</title>
+  <link rel="stylesheet" type="text/css" href="../style.css">
+  <link rel="icon" href="https://gotemba912.github.io/favicon.ico">
+  <meta charset="utf-8" />
+  <meta name="Description" content="DiscordサーバーのIDから鯖名やメンバーなどの情報を取得します。" />
+  <meta name="keywords"
+    content="Yuka0745,御殿場,ごて鯖,Windows,Minecraft,BE,PE,MCBE,MCPE,マイクラ,マインクラフト,まいくら,まいんくらふと,minecraft,mcpe,mcbe" />
+  <meta name="theme-color" content="#42ce6c" />
+  <meta property="og:description" content="DiscordサーバーのIDから鯖名やメンバーなどの情報を取得します。" />
+  <meta property="og:site_name" content="ゆかやま" />
+  <meta property="og:title" content="Discordサーバーの情報表示 - 優夢色" />
+  <meta property="og:image" content="https://gotemba912.github.io/images/app_icon.png"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+</head>
+
+<style>
+  input {
+    width: 100%;
+    height: 30px;
+  }
+
+  pre {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+    padding-left: 5px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+  }
+
+  div.memberack {
+    padding: 5px;
+    background-color: #e4e4e4;
+	  display: flex;
+    margin-bottom: 3px;
+  }
+
+  img.membericon {
+    width: 80px;
+    height: 80px;
+  }
+</style>
+
+<script>
+  function starts() {
+    const inputid = document.getElementById("inputid").value
+    if (inputid == "") {
+      window.alert("サーバーIDを入力してね。")
+      return
+    }
+    const http = new XMLHttpRequest();
+    http.open('GET', `https://discord.com/api/guilds/${inputid}/widget.json`);
+    http.send();
+    http.onreadystatechange = function(){
+      if (this.readyState == 4) {
+        const json = JSON.parse(http.responseText);
+        if (json.message) {
+          window.alert(`エラーが発生しました！\n-------\n${json.message}`)
+          return
+        }
+        document.getElementById("result").style.display = "inline"
+        document.getElementById("servername").textContent = json.name
+        document.getElementById("serverid").textContent = json.id
+        document.getElementById("online").textContent = json.presence_count
+
+        if (typeof json.instant_invite === "string") {
+          document.getElementById("serverlink").style.display = "inline"
+          document.getElementById("serverlink_null").style.display = "none"
+          document.getElementById("serverlink").textContent = json.instant_invite
+          document.getElementById("serverlink").href = json.instant_invite
+        } else {
+          document.getElementById("serverlink").style.display = "none"
+          document.getElementById("serverlink_null").style.display = "inline"
+          document.getElementById("serverlink").textContent = ""
+        }
+
+        let list = ""
+        for (const member of json.members) {
+          list = list + `<div class="memberack"><img src="${member.avatar_url}" class="membericon"><pre>${member.username}\n${member.status === 'online' ? '🟢 オンライン' :``}${member.status === 'idle' ? '🌙 退席中': ``}${member.status === 'dnd' ? '⛔ 取り込み中': ``}${member.game ? `\n${member.game.name} をプレイ中` : ``}</pre></div>`
+        }
+        document.getElementById("memberlist").innerHTML = list
+      };
+    };
+  }
+</script>
+
+<body>
+  <script type="text/javascript" src="../header.js"></script>
+  <div id="main_content">
+    <div style="height: 45px;"></div>
+    <script type="text/javascript" src="../title.js"></script>
+    <div class="contenten">
+      <div class="pack_flame">
+        <img src="../images/app_icon.png" witdh=80 height=80>
+        <div class="text_content">
+          <span class="pack_name">Discordサーバーの情報表示</span><br>
+          DiscordサーバーのIDから鯖名やメンバーなどの情報を取得します。
+        </div>
+      </div>
+
+      <p style="color: red; font-weight: bold;">⚠サーバーウィジェットが無効になっているサーバーは取得できません！</p>
+
+      サーバーのIDを入力してください↓↓<br>
+      <input type="number" id="inputid" name="inputid">  
+      <input type="button" value="取得する！！！"  onclick="starts()">
+      <div id="result" style="display: none;">
+        <hr>
+        <p>
+          サーバー名: <span id="servername"></span><br>
+          サーバーID: <span id="serverid"></span><br>
+          サーバー招待URL: <a id="serverlink" target="_blank"></a><span id="serverlink_null">なし</span>
+        </p>
+        <h2>オンラインのメンバー</h2>
+        <p>
+          🟢 <span id="online">0</span>人がオンライン
+        </p>
+        <div id="memberlist" style="font-size: 20px;"></div>
+      </div>
+			<div class="box22">
+				<h2>変更履歴</h2>
+			</div>
+
+      2023/10/02 - リリース<br>
+      <script type="text/javascript" src="../footer.js"></script>
+    </div>
+  </div>
+  <div style="height: 35px;"></div>
+</body>
+
+</html>
