@@ -42,10 +42,17 @@ body {
 	
 }
 
+.buttonicon {
+  width: 50px;
+  height: 50px;
+}
+
 .mokujikoumoku {
-	width: 33%;
+	あwidth: 100%;
 	margin: 2px;
-	height: 160px;
+	height: 60px;
+  color: white;
+  font-size: medium;
 	background-color: gray;
 	border: solid 3px #fff;
   border-image-source: url(./textures/ui/button_borderless_dark.png); 
@@ -56,17 +63,43 @@ body {
   border-image-repeat:round;
 	
 	cursor: pointer;
-	text-align: center;
+}
+
+.mokujikoumoku2 {
+	display: flex;
+  padding-top: 4px;
+  padding-left: 4px;
+	width: 100%;
+}
+
+.modorubotan {
+  width: 150px;
+  height: 30px;
+	margin: 2px;
+  color: white;
+  font-size: medium;
+  text-align: center;
+	background-color: gray;
+	border: solid 3px #fff;
+  border-image-source: url(./textures/ui/button_borderless_dark.png); 
+
+  border-image-slice: 229 fill;
+  border-image-width:6px;
+  border-image-outset:0px;
+  border-image-repeat:round;
+	
+	cursor: pointer;
 }
 
 .mokujikoumoku:hover {
   border-image-source: url(./textures/ui/button_borderless_darkhover.png); 
 }
 
-.mokujiicon {
-	width:90px;
-	height:90px;
+.modorubotan:hover {
+  border-image-source: url(./textures/ui/button_borderless_darkhover.png); 
 }
+
+.mokujiicon {}
 
 .sekusyon7 {
 	color:#c5c5c5
