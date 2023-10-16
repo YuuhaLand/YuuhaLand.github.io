@@ -12,6 +12,10 @@ a {
 	color: #0000ee;
 }
 
+img.imgdottto {
+  image-rendering: pixelated;
+}
+
 ::selection {
   background-color: #cbe3fa;
   color:black;
