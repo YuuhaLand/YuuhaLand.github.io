@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <link rel="icon" href="https://gotemba912.github.io/favicon.ico">
+  <meta charset="UTF-8">
+	<meta name="Description" content="😊: ニコチャンが　かんがえた
+０～９９までの　すうじを　あててください" />
+	<meta name="theme-color" content="#42ce6c" />
+	<meta property="og:description" content="😊: ニコチャンが　かんがえた
+０～９９までの　すうじを　あててください" />
+	<meta property="og:site_name" content="ゆかやま" />
+	<meta property="og:title" content="EX4NUMGAME.PRG" />
+  <meta name="robots" content="noindex,nofollow,noarchive" />
+  <title>EX4NUMGAME.PRG</title>
+</head>
+<body>
+  ┏━━━━━━━┓<br>
+  ┃かずあてゲーム┃<br>
+  ┗━━━━━━━┛<br>
+  😊: ニコチャンが　かんがえた<br>
+  ０～９９までの　すうじを　あててください<br>
+  <pre id="console_panel"></pre>
+</body>
+
+<style>
+  html,body {
+    color-scheme: dark;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: black;
+    color: white;
+    font-size: 10;
+  }
+
+  pre {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 10;
+  }
+</style>
+
+<script>
+  const console_panel = document.getElementById("console_panel")
+
+  let input_number = ""
+  let random_number = "0"
+  let seikai = false
+  let console_log = [ "０～９９までの　すうじは？ _" ]
+
+  console_panel.textContent = console_log.sort().join('\n')
+
+  random_number = Math.floor(Math.random() * 99).toString()
+
+  document.addEventListener('keydown', keypress_ivent)
+
+  function keypress_ivent(e) {
+    if (seikai) return false
+
+    if (e.key === "Backspace") {
+      input_number = input_number.slice( 0, -1 )
+      console_log[console_log.length - 1] = `０～９９までの　すうじは？ ${input_number}${input_number.length <= 10 ? "_" : ""}`
+      console_panel.textContent = console_log.join('\n')
+      window.scrollTo(0, document.body.scrollHeight);
+
+
+    } else if (e.key === "Enter") {
+      console_log[console_log.length - 1] = console_log[console_log.length - 1].replace("_","")
+      if (input_number === random_number) {
+        console_log[console_log.length] = `━━━━━━━━━━━━━━━━`
+        console_log[console_log.length] = `😊: あたり！！！！`
+        console_log[console_log.length] = `PUSH F5 KEY`
+        seikai = true
+        console_panel.textContent = console_log.join('\n')
+        window.scrollTo(0, document.body.scrollHeight);
+
+
+      } else {
+        let i = Number(input_number)
+        let r = Number(random_number)
+
+        if (i < r) {
+          console_log[console_log.length] = `😊: ＨＩＮＴ（ちいさいよ）`
+        } else {
+          console_log[console_log.length] = `😊: ＨＩＮＴ（おおきいです）`
+        }
+          console_log[console_log.length] = ""
+          console_log[console_log.length] = `０～９９までの　すうじは？ _ `
+          input_number = ""
+          console_log[console_log.length - 1] = `０～９９までの　すうじは？ ${input_number}${input_number.length <= 10 ? "_" : ""}`
+          console_panel.textContent = console_log.join('\n')
+          window.scrollTo(0, document.body.scrollHeight);
+      }
+
+
+    } else if (!isNaN(Number(e.key))  && !(e.key === " ") && (input_number.length <= 10)) {
+        input_number = input_number + e.key
+         console_log[console_log.length - 1] = `０～９９までの　すうじは？ ${input_number}${input_number.length <= 10 ? "_" : ""}`
+        console_panel.textContent = console_log.join('\n')
+        window.scrollTo(0, document.body.scrollHeight);
+    }
+	  return false
+  }
+
+</script>
+</html>
