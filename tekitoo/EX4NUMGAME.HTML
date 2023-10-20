@@ -21,6 +21,7 @@
   😊: ニコチャンが　かんがえた<br>
   ０～９９までの　すうじを　あててください<br>
   <pre id="console_panel"></pre>
+  <div class="mobilepanelpadding" id="mobile_panel_padding"></div>
   <div class="mobilepanel" id="mobile_panel">
     <input type="button" class="mobilebutton" value="1" onclick="keypress_ivent({key:'1'})">
     <input type="button" class="mobilebutton" value="2" onclick="keypress_ivent({key:'2'})">
@@ -44,6 +45,7 @@
     background-color: black;
     color: white;
     font-size: 16px;
+    touch-action: none;
   }
 
   pre {
@@ -51,14 +53,20 @@
     font-size: 16px;
   }
 
-  .mobilepanel {
+  div.mobilepanel {
     display: none;
+    width: 100%;
+    text-align: center;
     position: fixed;
     bottom: 0;
     right: 0;
-    background-color: #f0f0f0;
-    padding: 10px;
-    margin: 10px;
+    background-color: #140d25;
+    padding-top: 10px;
+  }
+
+  div.mobilepanelpadding {
+    display: none;
+    height: 210px;
   }
 
   input.mobilebutton {
@@ -66,13 +74,26 @@
     height: 50px;
     margin-bottom: 4px;
     font-size: 20px;
-    color: #ffffff;
+    background-color: #333333;
+    border: solid 2px #9b9b9b;
+    color: white
+  }
+
+  input.mobilebutton:hover {
+    background-color: #454545;
+    border: solid 2px #9b9b9b;
+  }
+
+  input.mobilebutton:active {
+    background-color: #666666;
+    border: solid 2px #9b9b9b;
   }
 </style>
 
 <script>
   const console_panel = document.getElementById("console_panel")
   const mobile_panel = document.getElementById("mobile_panel")
+  const mobile_panel_padding = document.getElementById("mobile_panel_padding")
 
   let input_number = ""
   let random_number = "0"
@@ -85,6 +106,7 @@
 
   if (/Mobi|Android/i.test(navigator.userAgent)) {
     mobile_panel.style.display = "block"
+    mobile_panel_padding.style.display = "block"
     }
   document.addEventListener('keydown', keypress_ivent)
 
