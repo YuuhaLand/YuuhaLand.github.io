@@ -16,6 +16,10 @@ img {
   image-rendering: pixelated;
 }
 
+img.kouka {
+  image-rendering: auto;
+}
+
 ::selection {
   background-color: #cbe3fa;
   color:black;
