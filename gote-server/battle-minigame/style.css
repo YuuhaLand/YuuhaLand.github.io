@@ -35,6 +35,20 @@ body {
   border-image-repeat:round;
 }
 
+.maikurawindow::-webkit-scrollbar {
+  width: 10px;
+}
+
+.maikurawindow::-webkit-scrollbar-track {
+  background-color: #434343;
+}
+
+.maikurawindow::-webkit-scrollbar-thumb {
+  background-color: #c6c6c6;
+  border-top: 4px solid #ffffff;
+  border-bottom: 4px solid #717171;
+}
+
 .mokuji {
 	width: 100%;
 	display: flex;
@@ -63,6 +77,7 @@ body {
   border-image-repeat:round;
 	
 	cursor: pointer;
+  user-select: none;
 }
 
 .mokujikoumoku2 {
@@ -89,6 +104,7 @@ body {
   border-image-repeat:round;
 	
 	cursor: pointer;
+  user-select: none;
 }
 
 .mokujikoumoku:hover {

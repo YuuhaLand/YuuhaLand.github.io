@@ -26,7 +26,28 @@ img.kouka {
 }
 
 textarea {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 20px;
   resize: vertical;
+}
+
+
+pre{
+  background-color: #1e1e1e;
+  color: #d4d4d4;
+  font-family: 'MS Mincho';
+  font-size: 14px;
+  padding: 6px;
+  overflow-x: scroll;
+}
+
+h3 {
+  background-color: #f4f4f4 ;
+  border-bottom: 3px dotted #5bb7ae;
+  border-left: 3px dotted #5bb7ae;
+  padding: 4px;
+  padding-left: 6px;
+  text-align: left;
 }
 
 #main_content {
@@ -96,18 +117,12 @@ header {
     vertical-align: top;
 }
 
-.box22 {
-    padding: 0.7em 1em;
-    margin: 1em 0;
-    background: #f4f4f4;
-    border-left: solid 6px #5bb7ae;
-    box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.33);
-}
-
-.box22 h2 {
-    margin: 0;
-    padding: 0;
-    font-weight: bold;
+h2 {
+   background: #f4f4f4;
+   border-left: solid 6px #5bb7ae;
+   box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.33);
+   padding: 7px;
+   font-weight: bold;
 }
 
 div.pack_flame {
