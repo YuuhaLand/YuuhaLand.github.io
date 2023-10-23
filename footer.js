@@ -1,1 +1,1 @@
-document.write(`<hr><div style="text-align: center;">Created by Yuka0745(@Gotemba912)</div>`);
+document.write(`<hr><div style="text-align: center;">©優華 (@Gotemba912)</div>`);

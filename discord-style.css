@@ -1,0 +1,135 @@
+a.discord {
+  color: #00a8fc;
+  text-decoration: none;
+}
+a.discord:hover {
+  text-decoration: underline #006ce7;
+}
+
+div.discord-message {
+  display: flex;
+  color: #dbdee1;
+  padding-left: 10px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+div.discord-message-content {
+  padding-left: 15px;
+}
+
+img.discord-author-img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+image-rendering: auto;
+}
+
+span.discord-post-date {
+  font-size: 0.75rem;
+  color: #949ba4;
+}
+
+div.discord-frame {
+  border: 1px solid #020202;
+  border-radius: 5px;
+  background-color: #313338;
+  color: white;
+  padding: 4px;
+  margin-bottom: 6px;
+}
+
+div.discord-embed {
+  border-left: 4px solid #269ff0;
+  border-radius: 4px;
+  background-color: #2b2d31;
+  padding: 5px;
+  margin-bottom: 6px;
+}
+
+input.discord-button {
+  color:white;
+  padding: 6px;
+  padding-left: 12px;
+  padding-right: 12px;
+  border: 0px;
+  border-radius: 3px;
+  cursor: pointer;
+  margin: 4px;
+  font-size: 14px;
+  transition: .2s;
+}
+
+input.blue {
+  background-color: #5865f2;
+}
+input.blue:hover {
+  background-color: #4752c4;
+}
+input.blue:active {
+  background-color: #3c45a5;
+}
+
+input.red {
+  background-color: #da373c;
+}
+input.red:hover {
+  background-color: #a12828;
+}
+input.red:active {
+  background-color: #8f2022;
+}
+
+input.green {
+  background-color: #248046;
+}
+input.green:hover {
+  background-color: #1a6334;
+}
+input.green:active {
+  background-color: #15562b;
+}
+
+input.normal {
+  background-color: #4e5058;
+}
+input.normal:hover {
+  background-color: #6d6f78;
+}
+input.normal:active {
+  background-color: #80848e;
+}
+
+
+input.blueframe {
+  border: 1px solid #5865f2;
+  background-color: #00000000;
+}
+input.blueframe:hover {
+  background-color: #5865f2;
+}
+input.blueframe:active {
+  background-color: #4752c4;
+}
+
+input.redframe {
+  border: 1px solid #da373c;
+  background-color: #00000000;
+}
+input.redframe:hover {
+  background-color: #da373c;
+}
+input.redframe:active {
+  background-color: #bb3032;
+}
+
+input.greenframe {
+  border: 1px solid #248046;
+  background-color: #00000000;
+}
+input.greenframe:hover {
+  background-color: #248046;
+}
+input.greenframe:active {
+  background-color: #1a6334;
+}
