@@ -1,0 +1,112 @@
+<html>
+<head>
+  <meta charset="UTF-8">
+  <link rel="icon" href="https://gotemba912.github.io/favicon.ico">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+	<meta name="Description" content="babel ui用ポーズ画面役職生成" />
+	<meta name="theme-color" content="#42ce6c" />
+	<meta property="og:description" content="babel ui用ポーズ画面役職生成" />
+	<meta property="og:site_name" content="ゆかやま" />
+	<meta property="og:title" content="役職生成" />
+  <meta name="robots" content="noindex,nofollow,noarchive" />
+  <title>役職生成</title>
+</head>
+<body>
+  <h1>役職生成</h1>
+  <hr>
+  <p>一名ずつ改行で区切って下さい</p>
+  <p>
+    統括運営監部<br>
+    <textarea id="soukatu_unei_kanbu"></textarea>
+  </p>
+  <p>
+    違反対処陣<br>
+    <textarea id="ihan_taisyo"></textarea>
+  </p>
+  <p>
+    総務対応陣<br>
+    <textarea id="soumu_taiou"></textarea>
+  </p>
+  <p>
+    特別技能陣<br>
+    <textarea id="tokubetu_ginou"></textarea>
+  </p>
+  <input type="button" value="生成" onclick="seisei()"><br>
+  <p>
+    結果⇩<br>
+    <textarea id="kekka" wrap="off" readonly></textarea>
+  </p>
+  <hr>
+  <p style="text-align: center;">babel ui用<br>Yuuha****がつくりました</p>
+</body>
+
+<style>
+  h1{
+    text-align: center;
+  }
+  input {
+    width: 100%;
+    font-size: medium;
+  }
+  textarea {
+    width: calc(100% - 6px);
+    font-family: sans-serif;
+    font-size: medium;
+    height: 150px;
+    resize: none;
+    overflow-y: scroll;
+  }
+  textarea#kekka{
+    height: 620px;
+    overflow-x: scroll;
+  }
+</style>
+
+<script>
+  function seisei() {
+    let soukatu = document.getElementById("soukatu_unei_kanbu").value.split("\n")
+    let ihan = document.getElementById("ihan_taisyo").value.split("\n")
+    let soumu = document.getElementById("soumu_taiou").value.split("\n")
+    let tokubetu = document.getElementById("tokubetu_ginou").value.split("\n")
+    let kekka = document.getElementById("kekka")
+    let kekkajson = ""
+
+
+    // そうかつ
+    kekkajson = `{\n  "soukatu_unei_kanbu@pause.roll_text_label": {\n    "$text": "§l§u統括運営監部",\n    "$if": "(`
+    for (let i = 0; i < soukatu.length; i++) {
+      const atai = soukatu[i]
+      if (atai === "") continue
+      kekkajson = kekkajson + `${i > 0 ? " or " : ""}(#gamertag = '${atai}')`
+    }
+
+    // いはん
+    kekkajson = kekkajson + `)"\n  }\n},\n{\n  "ihan_taisyo@pause.roll_text_label": {\n    "$text": "§l§6違反対処陣",\n    "$if": "(`
+    for (let i = 0; i < ihan.length; i++) {
+      const atai = ihan[i]
+      if (atai === "") continue
+      kekkajson = kekkajson + `${i > 0 ? " or " : ""}(#gamertag = '${atai}')`
+    }
+
+    // そうむ
+    kekkajson = kekkajson + `)"\n  }\n},\n{\n  "soumu_taiou@pause.roll_text_label": {\n    "$text": "§l§b総務対応陣",\n    "$if": "(`
+    for (let i = 0; i < soumu.length; i++) {
+      const atai = soumu[i]
+      if (atai === "") continue
+      kekkajson = kekkajson + `${i > 0 ? " or " : ""}(#gamertag = '${atai}')`
+    }
+
+    // とくべつ
+    kekkajson = kekkajson + `)"\n  }\n},\n{\n  "tokubetu_ginou@pause.roll_text_label": {\n    "$text": "§l§c特別技能陣",\n    "$if": "(`
+    for (let i = 0; i < tokubetu.length; i++) {
+      const atai = tokubetu[i]
+      if (atai === "") continue
+      kekkajson = kekkajson + `${i > 0 ? " or " : ""}(#gamertag = '${atai}')`
+    }
+
+    kekkajson = kekkajson + `)"\n  }\n},`
+    kekka.textContent = kekkajson
+  }
+</script>
+</html>
