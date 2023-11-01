@@ -185,14 +185,6 @@ const adlist = {
 			link: "https://github.com/Gotemba912/safezone-filler/releases/latest"
 		},
 		{
-			name: "Safezone filler",
-			description: "より小さいGUIにできます！",
-			icon_url: "https://github.com/Gotemba912/safezone-filler/blob/main/pack_icon.png?raw=true",
-			github_counter: "safezone-filler",
-			github_plus: 0,
-			link: "https://github.com/Gotemba912/safezone-filler/releases/latest"
-		},
-		{
 			name: "Revival to v1.16",
 			description: "より小さいGUIにできます！",
 			icon_url: "https://github.com/Gotemba912/revival-to-v1.16/blob/main/pack_icon.png?raw=true",
