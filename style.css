@@ -28,9 +28,12 @@ img.kouka {
 textarea {
   font-family: Arial, Helvetica, sans-serif;
   font-size: 20px;
-  resize: vertical;
+  resize: none;
 }
 
+label {
+  user-select: none;
+}
 
 pre{
   background-color: #1e1e1e;

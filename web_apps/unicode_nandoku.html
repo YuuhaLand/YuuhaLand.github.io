@@ -1,0 +1,86 @@
+<html lang="ja">
+
+<head>
+  <title>Unicode難読化- 優夢色</title>
+  <link rel="stylesheet" type="text/css" href="../style.css">
+  <link rel="icon" href="https://gotemba912.github.io/favicon.ico">
+  <meta charset="utf-8" />
+  <meta name="Description" content="Unicodeエスケープを使って難読化します。復元もできるよ。" />
+  <meta name="theme-color" content="#42ce6c" />
+  <meta property="og:description" content="Unicodeエスケープを使って難読化します。復元もできるよ。" />
+  <meta property="og:site_name" content="ゆかやま" />
+  <meta property="og:title" content="Unicode難読化 - 優夢色" />
+  <meta property="og:image" content="https://gotemba912.github.io/images/app_icon.png"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <meta name="robots" content="noindex,nofollow,noarchive" />
+</head>
+
+<body>
+  <script type="text/javascript" src="../header.js"></script>
+  <div id="main_content">
+    <div style="height: 45px;"></div>
+    <script type="text/javascript" src="../title.js"></script>
+    <div class="contenten">
+      <div class="pack_flame">
+        <img src="../images/app_icon.png" witdh=80 height=80>
+        <div class="text_content">
+          <span class="pack_name">Unicode難読化</span><br>
+          Unicodeエスケープを使って難読化します。復元もできるよ。
+        </div>
+      </div>
+
+      <p>
+        難読化したい文章を⇩に入力してね。<br>
+        <textarea id="motobun" style="width:100%; height:200px;"></textarea>
+      </p>
+      <p>
+        <label><input type="checkbox" id="noenter">改行はエスケープしない。</label>
+      </p>
+      <input type="button" style="width:100%; height:30px;" value="難読化！！！" onclick="nandoku()">
+
+      <p>
+        結果＆復元したい文章を⇩に入力してね。<br>
+        <textarea id="kekka" style="width:100%; height:200px;"></textarea>
+      </p>
+      <input type="button" style="width:100%; height:30px;" value="復元！！！" onclick="hukugen()">
+
+      <p>
+        復元結果⇩<br>
+        <textarea id="hukugenkekka" style="width:100%; height:200px;" readonly></textarea>
+      </p>
+      #ChatGPTちゃんまぢ感謝感謝
+			<h2>変更履歴</h2>
+      2023/11/02 - リリース<br>
+      <script type="text/javascript" src="../footer.js"></script>
+    </div>
+  </div>
+  <div style="height: 35px;"></div>
+</body>
+
+<script>
+  let motobun = document.getElementById("motobun")
+  let kekka = document.getElementById("kekka")
+  let hukugenkekka = document.getElementById("hukugenkekka")
+  let noenter = document.getElementById("noenter")
+  
+  function nandoku() {
+    let result = ""
+    let str = motobun.value
+    for (let i = 0; i < str.length; i++) {  //ChatGPTちゃんまぢ感謝感謝
+      const charCode = str.charCodeAt(i)
+      result += "\\u" + charCode.toString(16).padStart(4, "0")
+    }
+    if (noenter.checked) result = result.replace(/\\u000a/g,"\n")
+    kekka.value = result
+    return
+  }
+
+  function hukugen() {
+    let str = kekka.value
+    hukugenkekka.value = str.replace(/\\u[\dA-Fa-f]{4}/g, function(match) {  //ChatGPTちゃんまぢ感謝感謝
+        return String.fromCharCode(parseInt(match.slice(2), 16))
+    })
+    return
+  }
+</script>
+</html>
