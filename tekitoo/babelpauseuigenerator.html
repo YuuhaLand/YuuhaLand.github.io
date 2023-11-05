@@ -15,7 +15,10 @@
 <body>
   <h1>役職生成</h1>
   <hr>
-  <p>一名ずつ改行で区切って下さい</p>
+  <p>
+    一名ずつ改行で区切って下さい<br>
+    大文字と小文字はMinecraftでは<span style="font-weight: bold;">区別されます</span>のでご注意ください。
+  </p>
   <p>
     統括運営監部<br>
     <textarea id="soukatu_unei_kanbu"></textarea>
@@ -38,7 +41,17 @@
     <textarea id="kekka" wrap="off" readonly></textarea>
   </p>
   <hr>
-  <p style="text-align: center;">babel ui用<br>Yuuha****がつくりました</p>
+  <h2>適用方法</h2>
+  Babel UIリソースパック/ui/pause_screen.json内にて。<br>
+  青くなっているところを消して赤字の矢印のところにペーストします。<br>
+  <center><img class="kouka" src="babelui_pesuto_basyo.png" style="max-width: 100%; height: auto;"></center>
+  <p>
+    短い期間でしたが、今までありがとうございました。<br>
+    何かご質問や、作ってほしいものがあればAobaさんを通して私のDiscord DMにてよろしくお願いいたします。<br>
+    可能な範囲で答えます。
+  </p>
+  <hr>
+  <p style="text-align: right;">元 BabelServer 特別技能陣 YuuhaLand</p>
 </body>
 
 <style>
@@ -47,7 +60,7 @@
   }
   input {
     width: 100%;
-    font-size: medium;
+    font-size: x-large;
   }
   textarea {
     width: calc(100% - 6px);
