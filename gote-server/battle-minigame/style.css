@@ -3,13 +3,14 @@ ul {
 }
 
 body {
-	font-family: 'arial', sans-serif;
+	font-family: sans-serif;
+  font-size: large;
+  background-color: #b2a783;
 	background-image: url(textures/ui/backimage.jpg);
   background-position: center center;
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: cover;
-   
 }
 
 .maikurawindow {
@@ -53,16 +54,16 @@ body {
 	width: 100%;
 	display: flex;
 	justify-content: space-between;
-	
 }
 
 .buttonicon {
   width: 50px;
   height: 50px;
+  image-rendering: pixelated;
+  margin-right: 10px;
 }
 
 .mokujikoumoku {
-	あwidth: 100%;
 	margin: 2px;
 	height: 60px;
   color: white;
@@ -115,7 +116,6 @@ body {
   border-image-source: url(./textures/ui/button_borderless_darkhover.png); 
 }
 
-.mokujiicon {}
 
 .sekusyon7 {
 	color:#c5c5c5
@@ -135,4 +135,42 @@ div.htp_header {
   border: solid 2px black;
   padding: 5px;
 	margin: 4px;
+}
+
+
+/* 縦画面用のスタイル */
+@media screen and (max-width: 600px) {
+  .maikurawindow {
+    position: static;
+    top: auto;
+    left: auto;
+    transform: none;
+    width: 100%;
+    height: auto;
+    padding: 0px;
+  
+    overflow-y: auto;
+    background: none;
+  
+    border: none;
+  }
+
+  body {
+    background-color: #1e1e1e;
+    background-image: none;
+  }
+
+  body::-webkit-scrollbar {
+    width: 10px;
+  }
+  
+  body::-webkit-scrollbar-track {
+    background-color: #434343;
+  }
+  
+  body::-webkit-scrollbar-thumb {
+    background-color: #c6c6c6;
+    border-top: 4px solid #ffffff;
+    border-bottom: 4px solid #717171;
+  }
 }
