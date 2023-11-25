@@ -148,3 +148,10 @@ span.pack_count {
     background-color: #000000a1;
     color: white
 }
+
+
+div.file {
+  background-color: #f0f0f0;
+  padding: 4px;
+  margin-bottom: 3px;
+}
