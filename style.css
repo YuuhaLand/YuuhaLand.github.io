@@ -154,4 +154,31 @@ div.file {
   background-color: #f0f0f0;
   padding: 4px;
   margin-bottom: 3px;
+  display: flex
+}
+
+div.daunrowd {
+  width: fit-content;
+  display: flex;;
+  text-align: center;
+  margin-right  :auto; margin-left:auto;
+  margin: 0 auto;
+  font-size: 20px;
+  user-select: none;
+  background-color: pink;
+  padding: 4.835px;
+  border-radius:5px;
+}
+
+a.dawnrowdrink {
+  position: relative;
+  text-align: center;
+  margin-right  :auto; margin-left:auto;
+  text-decoration: none; 
+  color: black;
+  width: fit-content;
+}
+
+div.daunrowd:hover {
+  background-color: #ffdee3;
 }
