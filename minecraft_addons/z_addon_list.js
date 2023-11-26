@@ -186,7 +186,7 @@ const adlist = {
 		},
 		{
 			name: "Revival to v1.16",
-			description: "より小さいGUIにできます！",
+			description: "変わってしまったUIを1.16風にできる限り戻しました!!!",
 			icon_url: "https://github.com/Gotemba912/revival-to-v1.16/blob/main/pack_icon.png?raw=true",
 			github_counter: "revival-to-v1.16",
 			github_plus: 0,
@@ -194,11 +194,19 @@ const adlist = {
 		},
 		{
 			name: "三人称カメラの仕様を戻す",
-			description: "より小さいGUIにできます！",
+			description: "三人称カメラで音をプレイヤー基準の仕様に戻します",
 			icon_url: "https://github.com/Gotemba912/camera-sound-player/blob/main/pack_icon.png?raw=true",
 			github_counter: "camera-sound-player",
 			github_plus: 0,
 			link: "https://github.com/Gotemba912/camera-sound-player/releases/latest"
+		},
+		{
+			name: "ブルスクアドオン",
+			description: "ブルースクリーン(BSOD)風の画面を表示できるよ",
+			icon_url: "https://github.com/Gotemba912/bluescreen-addon/blob/main/pack_icon.png?raw=true",
+			github_counter: "bluescreen-addon",
+			github_plus: 0,
+			link: "https://github.com/Gotemba912/bluescreen-addon/releases/latest"
 		}
 	]
 }
