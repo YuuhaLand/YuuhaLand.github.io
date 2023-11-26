@@ -207,6 +207,14 @@ const adlist = {
 			github_counter: "bluescreen-addon",
 			github_plus: 0,
 			link: "https://github.com/Gotemba912/bluescreen-addon/releases/latest"
+		},
+		{
+			name: "UIパフォーマンス改善",
+			description: "UIでのメモリ使用量を抑え、パフォーマンスを改善します",
+			icon_url: "https://github.com/Gotemba912/memori-sakugen-ui/blob/main/pack_icon.png?raw=true",
+			github_counter: "memori-sakugen-ui",
+			github_plus: 0,
+			link: "https://github.com/Gotemba912/memori-sakugen-ui/releases/latest"
 		}
 	]
 }
