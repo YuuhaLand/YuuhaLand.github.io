@@ -25,7 +25,6 @@ body {
 	color: white;
 
   overflow-y: scroll;
-  scrollbar-color: rebeccapurple green;
   scrollbar-width: thin;
 
   border-image-source: url(./textures/ui/dialog_background_hollow_4.png); 
@@ -86,6 +85,10 @@ body {
   padding-top: 4px;
   padding-left: 4px;
 	width: 100%;
+}
+
+.mokujikoumokus {
+  margin-top: 19px;
 }
 
 .modorubotan {
