@@ -33,6 +33,14 @@ const adlist = {
 			link: "./console_ui.html"
 		},
 		{
+			name: "Revival to v1.16",
+			description: "変わってしまったUIを1.16風にできる限り戻しました!!!",
+			icon_url: "https://github.com/Gotemba912/revival-to-v1.16/blob/main/pack_icon.png?raw=true",
+			github_counter: "revival-to-v1.16",
+			github_plus: 0,
+			link: "./revival_1.16.html"
+		},
+		{
 			name: "Chat Text Copy",
 			description: "チャットの文章を簡単にコピペできます",
 			icon_url: "https://github.com/Gotemba912/chat-text-copy/blob/main/pack_icon.png?raw=true",
@@ -183,14 +191,6 @@ const adlist = {
 			github_counter: "safezone-filler",
 			github_plus: 0,
 			link: "https://github.com/Gotemba912/safezone-filler/releases/latest"
-		},
-		{
-			name: "Revival to v1.16",
-			description: "変わってしまったUIを1.16風にできる限り戻しました!!!",
-			icon_url: "https://github.com/Gotemba912/revival-to-v1.16/blob/main/pack_icon.png?raw=true",
-			github_counter: "revival-to-v1.16",
-			github_plus: 0,
-			link: "https://github.com/Gotemba912/revival-to-v1.16/releases/latest"
 		},
 		{
 			name: "三人称カメラの仕様を戻す",
