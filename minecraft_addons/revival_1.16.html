@@ -1,0 +1,91 @@
+<html lang="ja">
+
+<head>
+	<title>Revival to v1.16 - 優夢色</title>
+	<link rel="stylesheet" type="text/css" href="../style.css">
+	<link rel="icon" href="https://gotemba912.github.io/favicon.ico">
+	<meta charset="utf-8" />
+	<meta name="Description" content="変わってしまったUIを1.16風にできる限り戻しました!!!" />
+	<meta name="theme-color" content="#42ce6c" />
+	<meta property="og:description" content="変わってしまったUIを1.16風にできる限り戻しました!!!" />
+	<meta property="og:site_name" content="ゆうはくおりてぃー" />
+	<meta property="og:title" content="Revival to v1.16 - 優夢色" />
+  <meta property="og:image" content="https://gotemba912.github.io/minecraft_addons/images/gote-supporter.png"/>
+	<meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <meta name="robots" content="noindex,nofollow,noarchive" />
+</head>
+
+<body>
+	<script type="text/javascript" src="../header.js"></script>
+	<div id="main_content">
+		<div style="height: 45px;"></div>
+		<script type="text/javascript" src="../title.js"></script>
+		<div class="contenten">
+			<div class="pack_flame">
+				<img src="https://github.com/Gotemba912/revival-to-v1.16/blob/main/pack_icon.png?raw=true" witdh=80 height=80>
+				<div class="text_content">
+					<span class="pack_name">Revival to v1.16</span><br>
+					変わってしまったUIを1.16風にできる限り戻しました!!!!
+				</div>
+			</div>
+
+			<h2 style="font-family: monospace; font-style: italic;">変わりゆく、統合版のユーザーインターフェース.......。</h2>
+      <p>時代とともに、統合版のUIなどもいろいろ変わってしまってしまいました。</p>
+      <p>5年間くらい統合版やってきた私からすると、<span style="font-weight: bold;">昔のほうが良かった。</span></p>
+      <p>なんとかならないかと思った私は、持ってるUIの技術で、変わってしまった統合版のUIをv1.16あたりのUIにできる限り戻すことにした。</p>
+			<h2>注意</h2>
+      <p>
+        このリソースパックを使うことで、v1.16にダウングレードすることは出来ません。<br>
+        また、このリソースパックを使ってRender Dragonを削除することは出来ません。<br>
+        あらかじめご了承ください。 m(_ _)m
+      </p>
+			<h2>このリソースパックを入れると何が変わるの？</h2>
+
+      <p>
+        今のところ、以下に対応しています。
+      </p>
+			<ul>
+        <li>タブをマウスホバーしても緑色にならない。</li>
+        <li>「一般」タブと「アカウント」タブを再統合し、設定画面の「プロフィール」タブを復活。</li>
+        <li>設定画面のアクセシビリティ設定のアイコンを元に戻す。</li>
+        <li>設定画面とチャット設定画面の灰色っぽい背景を黒に戻す。</li>
+        <li>日本語翻訳が1.16時代の翻訳を90%再現。 (ブロック名、アイテム名、一部のＵＩ表記。) </li>
+        <li>日本語翻訳にかつて存在していたガバガバ翻訳を99%再現。</li>
+        <li>スコアボードsidebar、ポーズ画面のUIを戻す。</li>
+        <li>クリムゾン・ゆがんだ木材の音を幹と同じにする。</li>
+        <li>ドア、トラップドア、フェンスゲート、ボタン、感圧板の音がリニューアル前に戻る。</li>
+        <li>水の音がリニューアル前に戻る。</li>
+        <li>ベルの音が実装当初の音程に戻る。</li>
+        <li>インベントリ画面などの背景が再び濃くなる。</li>
+        <li>ホットバーの透明度が再び薄くなる。</li>
+        <li>トグルスイッチのOFFの状態のテクスチャ、ポーションのテクスチャが元に戻る。（＊）</li>
+        <li>タイトルロゴが昔のタイプに戻る。</li>
+			</ul>
+			<p>
+				（＊）の付いた要素は、パック設定から無効にできます。<br>
+        これにより他のテクスチャパックとの互換性を高めます。
+        <div style="text-align:center;">
+          <img src="images/rev16_scr01.png" alt="パック設定画面" style="max-width: 100%; height: auto;"><br>
+          パック設定画面
+        </div>
+			</p>
+			<h2>UIクリエイター向け情報</h2>
+			<p>
+        このパックが適用されているかどうかで表示を変えたい場合、<br>
+        _global_variables.jsonにこれを入れれば、ignoredなどで表示切替できます。<br>
+        <pre>"$1_16_revival_enabled|default": false</pre>
+        例: Revival to  v1.16が適用されていれば非表示にする<br>
+        <pre>"ignored": "$1_16_revival_enabled"</pre>
+			</p>
+			<h2>ダウンロードはこちら</h2>
+			<p>
+				<a href="https://github.com/Gotemba912/revival-to-v1.16/releases/latest" alt="Github" title="Github">Githubからダウンロードする</a>
+			</p>
+
+			<script type="text/javascript" src="../footer.js"></script>
+		</div>
+	</div>
+	<div style="height: 35px;"></div>
+</body>
+
+</html>
