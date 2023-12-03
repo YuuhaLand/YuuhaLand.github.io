@@ -34,7 +34,8 @@
       <h2>オプション</h2>
       <label><input type="checkbox" id="hud_compass">HUDにコンパスと時計を表示</label><br>
       <label><input type="checkbox" id="show_recoverycompass">HUDのコンパスにリカバリーコンパスを追加(ベータ!)</label><br>
-      <label><input type="checkbox" id="show_hotbar_navigator">HUDのホットバーナビゲーターの表示(タッチ)</label>
+      <label><input type="checkbox" id="show_hotbar_navigator">HUDのホットバーナビゲーターの表示(タッチ)</label><br>
+      <label><input type="checkbox" id="play_screen_doubleclick">プレイ画面のワールドのボタンをダブルクリックしないと入れないようにする</label>
       <p>
         HUDのF1/F8ボタンの位置(タッチ)<br>
         <select id="f1_f8_location">
@@ -146,6 +147,7 @@
       "$hud_compass": document.getElementById("hud_compass").checked,
       "$show_recoverycompass": document.getElementById("show_recoverycompass").checked,
       "$show_hotbar_navigator": document.getElementById("show_hotbar_navigator").checked,
+      "$play_screen_doubleclick": document.getElementById("play_screen_doubleclick").checked,
       "$f1_f8_location": document.getElementById("f1_f8_location").selectedOptions[0].id,
       "$chat_tab_button_type": document.getElementById("chat_tab_button_type").selectedOptions[0].id,
       "$playerlist_key": document.getElementById("playerlist_key").selectedOptions[0].id
