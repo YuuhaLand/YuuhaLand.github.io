@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <title>Gote-Supporter Config ジュネレーター</title>
+  <link rel="icon" href="https://gotemba912.github.io/favicon.ico">
+  <meta charset="utf-8" />
+  <meta name="Description" content="Gote-SupporterのConfigを生成できます。" />
+  <meta name="theme-color" content="#42ce6c" />
+  <meta property="og:description" content="Gote-SupporterのConfigを生成できます。" />
+  <meta property="og:site_name" content="ゆうはくおりてぃー" />
+  <meta property="og:title" content="Gote-Supporter Config ジュネレーター" />
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <meta name="robots" content="noindex,nofollow,noarchive" />
+</head>
+
+<script src="./jszip.min.js"></script>
+<script src="./file/manifest.json.js"></script>
+<script src="./file/pack_icon.png.js"></script>
+
+<body>
+  <div class="main">
+    <div style="padding: 10px;">
+      <h1>
+        Gote-Supporter Config Generator
+      </h1>
+      <p>
+        このツールではGote-Supporter Configパックを作ることが出来ます！！
+      </p>
+      <p>
+        Gote-Supporter Configについて、詳しくはコチラをご覧ください！<br>
+        <a href="https://github.com/Gotemba912/Gote-Supporter/wiki/Config(Japanese)" target="_blank">https://github.com/Gotemba912/Gote-Supporter/wiki/Config(Japanese)</a>
+      </p>
+      <h2>オプション</h2>
+      <label><input type="checkbox" id="hud_compass">HUDにコンパスと時計を表示</label><br>
+      <label><input type="checkbox" id="show_recoverycompass">HUDのコンパスにリカバリーコンパスを追加(ベータ!)</label><br>
+      <label><input type="checkbox" id="show_hotbar_navigator">HUDのホットバーナビゲーターの表示(タッチ)</label>
+      <p>
+        HUDのF1/F8ボタンの位置(タッチ)<br>
+        <select id="f1_f8_location">
+          <option id="top">top - 上のチャットボタンなどと並べて表示 (デフォルト)</option>
+          <option id="right">right - 右下に表示</option>
+          <option id="none">none - 非表示にする</option>
+        </select>
+      </p>
+      <p>
+        チャット画面のTabキーの配置<br>
+        <select id="chat_tab_button_type">
+          <option id="vertical">vertical - 右下に並べて配置</option>
+          <option id="horizontal">horizontal - 下のチャット設定ボタンなどと並べて表示</option>
+          <option id="none">none - 非表示にする</option>
+        </select>
+      </p>
+      <p>
+        HUDでプレイヤーリストを表示するキー<br>
+        <select id="playerlist_key">
+          <option id="tab">tab - Tabキー</option>
+          <option id="f10">f10 - F10キー</option>
+        </select>
+      </p>
+      <h2>生成する</h2>
+      <p>
+        mcpack化してダウンロード出来ます。<br>
+        ※ダウンロードしたmcpackをインポートする前に既存のConfigは削除してください！
+      </p>
+      <div style="text-align: center;">
+        <input type="button" class="button" value="mcpackとしてダウンロード" onclick="mcpack()">
+      </div>
+      <p>
+        また、「_global_variables.json」だけをコピーすることも出来ます
+      </p>
+      <div style="text-align: center;">
+        <input type="button" class="button" value="_global_variables.json を生成" onclick="mcpack('json')">
+      </div>
+      <p>
+        ⇩ できた_global_variables.json ⇩
+        <textarea id="global_variables" readonly></textarea>
+      </p>
+      <hr>
+      <p style="text-align: center;">
+        つくったひと: YuuhaLand
+      </p>
+    </div>
+  </div>
+</body>
+
+<style>
+  html {
+    background-color: #f0f0f0;
+  }
+
+  body {
+    color: black;
+    font-family: sans-serif;
+  }
+
+  label {
+    font-size: large;
+    user-select: none;
+  }
+
+  select {
+    font-size: large;
+  }
+
+  textarea {
+    resize: none;
+    width: 100%;
+    height: 300px;
+    font-family: 'MS Mincho';
+    font-size: 14px;
+  }
+
+  .button {
+    font-size: large;
+    width: 80%;
+  }
+  
+  .main {
+    background-color: white;
+    width: 1200px;
+    max-width: 100%;
+    margin: 0 auto;
+  }
+
+  h1 {
+    background-color: #e9e9e9;
+    padding: 5px;
+    border-radius: 5px;
+    border-bottom: 3px solid #ccc900;
+    text-align: center;
+  }
+
+  h2 {
+    background-color: #e9e9e9;
+    border-left: 3px solid #007acc;
+    padding: 6px;
+    text-align: left;
+  }
+</style>
+
+<script>
+  function mcpack(daunr="mcpack") {
+
+    let global_variables = {
+      "$hud_compass": document.getElementById("hud_compass").checked,
+      "$show_recoverycompass": document.getElementById("show_recoverycompass").checked,
+      "$show_hotbar_navigator": document.getElementById("show_hotbar_navigator").checked,
+      "$f1_f8_location": document.getElementById("f1_f8_location").selectedOptions[0].id,
+      "$chat_tab_button_type": document.getElementById("chat_tab_button_type").selectedOptions[0].id,
+      "$playerlist_key": document.getElementById("playerlist_key").selectedOptions[0].id
+    }
+
+    if (daunr === "json") {
+      document.getElementById("global_variables").value = JSON.stringify(global_variables, null, 2)
+    } else {
+      let zip = new JSZip()
+      zip.file("manifest.json", manifestjson)
+      zip.file("pack_icon.png", pack_iconpng, {base64: true})
+      zip.file("ui/_global_variables.json", JSON.stringify(global_variables, null, 2))
+      
+      zip.generateAsync({type:"blob"}).then(function(content) {
+  	    let link = document.createElement('a')
+  	    link.download = "Gote-Supporter_Config.mcpack"
+  	    link.href = URL.createObjectURL(content)
+  	    link.click()
+  	    URL.revokeObjectURL(link.href)
+      })
+    }
+  }
+</script>
+</html>
