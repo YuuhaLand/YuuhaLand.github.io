@@ -241,6 +241,14 @@
         <img src="./images/sekuk.gif"><br>
         §kは、Unicodeフォントや、スムースフォント、MinecraftTen、その他のカスタムフォントでは利用できません。
       </p>
+    
+      <h2>セクションテスター</h2>
+      <p>
+        ここで§文字列を実際に装飾できます！！<br>
+        #ChatGPTちゃんまぢ感謝感謝<br>
+        <textarea id="section" onchange="henkan()"></textarea><br>
+        <div id="kekka"></div>
+      </p>
       <hr>
       <p style="text-align: center;">
         書いたひと: YuuhaLand
@@ -264,6 +272,14 @@
     color: white;
     font-family: 'Mojangles', 'DotGothic16', sans-serif;
     font-size: 20px;
+  }
+
+  textarea {
+    font-family: 'Mojangles', 'DotGothic16', sans-serif;
+    font-size: 20px;
+    width: calc(100% - 20px);
+    height: 300px;
+    resize: none;
   }
   
   .main {
@@ -293,5 +309,74 @@
 	  margin: 4px;
   }
 </style>
+
+<script>
+  function htmlEncode(str) {   //ChatGPTちゃんまぢ感謝感謝！
+    return String(str).replace(/[&<>"'\/]/g, function (s) {
+      return entityMap[s];
+    });
+  }
+
+  function countACOccurrences(inputString) {   //ChatGPTちゃんまぢ感謝感謝！
+    const matches = inputString.match(/<span style="/g);
+    return matches ? matches.length : 0;
+  }
+
+
+  const entityMap = {   //ChatGPTちゃんまぢ感謝感謝！
+    "&": "&amp;",
+    "<": "&lt;",
+    ">": "&gt;",
+    '"': '&quot;',
+    "'": '&#39;',
+    "/": '&#x2F;'
+  };
+
+  function henkan() {
+    let section = htmlEncode(document.getElementById("section").value)
+    section = section.replace(/\n/g, "<br>")
+    section = section.replace(/ /g, "&nbsp;")
+
+    section = section.replace(/§0/g, '<span style="color: #000000">')
+    section = section.replace(/§1/g, '<span style="color: #0000aa">')
+    section = section.replace(/§2/g, '<span style="color: #00aa00">')
+    section = section.replace(/§3/g, '<span style="color: #00aaaa">')
+    section = section.replace(/§4/g, '<span style="color: #aa0000">')
+    section = section.replace(/§5/g, '<span style="color: #aa00aa">')
+    section = section.replace(/§6/g, '<span style="color: #ffaa00">')
+    section = section.replace(/§7/g, '<span style="color: #aaaaaa">')
+    section = section.replace(/§8/g, '<span style="color: #545454">')
+    section = section.replace(/§9/g, '<span style="color: #5454ff">')
+    section = section.replace(/§a/g, '<span style="color: #54ff54">')
+    section = section.replace(/§b/g, '<span style="color: #54ffff">')
+    section = section.replace(/§c/g, '<span style="color: #ff5454">')
+    section = section.replace(/§d/g, '<span style="color: #ff54ff">')
+    section = section.replace(/§e/g, '<span style="color: #ffff54">')
+    section = section.replace(/§f/g, '<span style="color: #ffffff">')
+
+    section = section.replace(/§u/g, '<span style="color: #9a5cc5">')
+    section = section.replace(/§n/g, '<span style="color: #b4684d">')
+    section = section.replace(/§s/g, '<span style="color: #2cb9a8">')
+    section = section.replace(/§q/g, '<span style="color: #119f36">')
+    section = section.replace(/§p/g, '<span style="color: #deb02c">')
+    section = section.replace(/§i/g, '<span style="color: #cec9c9">')
+    section = section.replace(/§t/g, '<span style="color: #20487a">')
+    section = section.replace(/§h/g, '<span style="color: #e2d3d1">')
+    section = section.replace(/§j/g, '<span style="color: #44393a">')
+    section = section.replace(/§m/g, '<span style="color: #961506">')
+
+    section = section.replace(/§b/g, '<span style="font-weight: bold">')
+    section = section.replace(/§o/g, '<span style="font-style: italic">')
+    section = section.replace(/§r/g, '<span style="color: white; font-weight: normal; font-style: normal">')
+    
+    section = section.replace(/§./g, '')
+
+    for (let i = 0; i < countACOccurrences(section); i++) {
+      section += "</span>"
+    }
+
+    document.getElementById("kekka").innerHTML = section
+  }
+</script>
 
 </html>
