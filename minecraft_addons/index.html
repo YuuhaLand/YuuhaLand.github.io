@@ -1,20 +1,19 @@
 <html lang="ja">
 
 <head>
-	<title>マイクラ統合版 アドオン一覧 - 優夢色</title>
+	<title>ゆうは作 マイクラ統合版アドオンたち - 優夢色</title>
 	<link rel="stylesheet" type="text/css" href="../style.css">
 	<link rel="icon" href="https://gotemba912.github.io/favicon.ico">
 	<meta charset="utf-8" />
-	<meta name="Description" content="マイクラBE で使用可能な Yuka0745作 のアドオンなどが配布されています!" />
+	<meta name="Description" content="マイクラ統合版で使えるいろんなアドオンを配布しています。" />
 	<meta name="theme-color" content="#42ce6c" />
-	<meta property="og:description" content="マイクラBE で使用可能な Yuka0745作 のアドオンなどが配布されています!" />
+	<meta property="og:description" content="マイクラ統合版で使えるいろんなアドオンを配布しています。" />
 	<meta property="og:site_name" content="ゆうはくおりてぃー" />
-	<meta property="og:title" content="マイクラ統合版 アドオン一覧 - 優夢色" />
+	<meta property="og:title" content="ゆうは作 マイクラ統合版アドオンたち - 優夢色" />
 	<meta name="viewport" content="width=device-width,initial-scale=1.0">
   <meta name="robots" content="noindex,nofollow,noarchive" />
 </head>
 
-<script type="text/javascript" src="../github_counter.js"></script>
 <script type="text/javascript" src="./z_addon_list.js"></script>
 
 <body>
@@ -23,17 +22,10 @@
 		<div style="height: 45px;"></div>
 		<script type="text/javascript" src="../title.js"></script>
 		<div class="contenten">
-			<h2>マイクラ統合版 アドオン一覧</h2>
+			<h2>ゆうは作 マイクラ統合版アドオンたち</h2>
 			マイクラ統合版で使えるいろんなアドオンを配布しています。<br>
-			<p>
-			検索 <input type="text" id="kensaku" style="width: calc(100% - 50px);; font-size: 120%;" oninput="inputChange()">
-			</p>
 			<span id="listcount"></span><br>
 			<div id="addon_list_div"></div>
-
-			<p style="text-align: center;">
-				ここに載ってないアドオンも配布しています。 <a href="https://github.com/Gotemba912?tab=repositories" target="_blank">Githubのリポジトリ</a>を見てね。
-			</p>
 			<script type="text/javascript" src="../footer.js"></script>
 		</div>
 	</div>
@@ -41,101 +33,17 @@
 </body>
 
 <script type="text/javascript">
-	for (const obj of adlist.addon_list) {
-		let addon_list_div = document.getElementById('addon_list_div');
-		let pack_flame = document.createElement('div')
-		pack_flame.classList.add("pack_flame");
-		addon_list_div.appendChild(pack_flame);
 
-		if (!(obj.github_counter == "")) {
-			pack_flame.innerHTML = `
-			<img src="${obj.icon_url}" witdh=80 height=80>
-				<div class="text_content">
-					<span class="pack_name"><a href="${obj.link}">${obj.name}</a></span><br>
-					${obj.description}<br>
-					<span class="pack_count">DL数: <span id="${obj.github_counter}_count"></span></span>
-				</div>`
-			github_counter(obj.github_counter, obj.github_plus, `${obj.github_counter}_count`)
-		} else {
-			pack_flame.innerHTML = `
-			<img src="${obj.icon_url}" witdh=80 height=80>
-				<div class="text_content">
-					<span class="pack_name"><a href="${obj.link}">${obj.name}</a></span><br>
-					${obj.description}
-				</div>`
-		}
-	}
-	let input = document.getElementById('kensaku');
-	function inputChange() {
-		while (addon_list_div.firstChild) {
-			addon_list_div.removeChild(addon_list_div.firstChild)
-		}
-		if (input.value == "") {
-			for (const obj of adlist.addon_list) {
-		let addon_list_div = document.getElementById('addon_list_div');
-		let pack_flame = document.createElement('div')
-		pack_flame.classList.add("pack_flame");
-		addon_list_div.appendChild(pack_flame);
-
-		if (!(obj.github_counter == "")) {
-			pack_flame.innerHTML = `
-			<img src="${obj.icon_url}" witdh=80 height=80>
-				<div class="text_content">
-					<span class="pack_name"><a href="${obj.link}">${obj.name}</a></span><br>
-					${obj.description}<br>
-					<span class="pack_count">DL数: <span id="${obj.github_counter}_count"></span></span>
-				</div>`
-			github_counter(obj.github_counter, obj.github_plus, `${obj.github_counter}_count`)
-		} else {
-			pack_flame.innerHTML = `
-			<img src="${obj.icon_url}" witdh=80 height=80>
-				<div class="text_content">
-					<span class="pack_name"><a href="${obj.link}">${obj.name}</a></span><br>
-					${obj.description}
-				</div>`
-		}
-			}
-			let listcount = document.getElementById('listcount');
-			listcount.textContent = ""
-		} else {
-			let count = 0
-			for (const obj of adlist.addon_list) {
-				if (obj.name.toLowerCase().match(input.value.toLowerCase())) {
-					let addon_list_div = document.getElementById('addon_list_div');
-					let pack_flame = document.createElement('div')
-					pack_flame.classList.add("pack_flame");
-					addon_list_div.appendChild(pack_flame);
-
-					if (!(obj.github_counter == "")) {
-						pack_flame.innerHTML = `
-			<img src="${obj.icon_url}" witdh=80 height=80>
-				<div class="text_content">
-					<span class="pack_name"><a href="${obj.link}">${obj.name}</a></span><br>
-					${obj.description}<br>
-					<span class="pack_count">DL数: <span id="${obj.github_counter}_count"></span></span>
-				</div>`
-						github_counter(obj.github_counter, obj.github_plus, `${obj.github_counter}_count`)
-					} else {
-						pack_flame.innerHTML = `
-			<img src="${obj.icon_url}" witdh=80 height=80>
-				<div class="text_content">
-					<span class="pack_name"><a href="${obj.link}">${obj.name}</a></span><br>
-					${obj.description}
-				</div>`
-					}
-					count = count + 1
-				}
-			}
-			if (count == 0) {
-				let listcount = document.getElementById('listcount');
-				listcount.textContent = "お探しのアドオンは見つかりませんでした。"
-			} else {
-				let listcount = document.getElementById('listcount');
-				listcount.textContent = `${count}件のアドオンが見つかりました。`
-			}
-		}
-
-	};
+  function zenbu_yomikomi() {
+	  for (const obj of adlist.addon_list) {
+	  	let addon_list_div = document.getElementById('addon_list_div');
+	  	let pack_flame = document.createElement('div')
+	  	pack_flame.classList.add("pack_flame");
+	  	addon_list_div.appendChild(pack_flame);
+	  	pack_flame.innerHTML = `<img src="${obj.icon_url}" witdh=80 height=80><div class="text_content"><span class="pack_name"><a href="${obj.link}">${obj.name}</a></span><br>${obj.description}</div>`
+	  }
+  }
+  zenbu_yomikomi()
 </script>
 
 </html>

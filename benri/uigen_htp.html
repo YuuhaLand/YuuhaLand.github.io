@@ -1,0 +1,79 @@
+<html lang="ja">
+
+<head>
+	<title>json ui 遊び方画面変換</title>
+	<link rel="icon" href="https://gotemba912.github.io/favicon.ico">
+	<meta charset="utf-8" />
+	<meta name="Description" content="json ui 遊び方画面変換" />
+	<meta name="theme-color" content="#42ce6c" />
+	<meta property="og:description" content="json ui 遊び方画面変換" />
+	<meta property="og:site_name" content="ゆうはくおりてぃー" />
+	<meta property="og:title" content="json ui 遊び方画面変換" />
+  <meta property="og:image" content="https://gotemba912.github.io/images/app_icon.png"/>
+	<meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <meta name="robots" content="noindex,nofollow,noarchive" />
+</head>
+
+<body>
+  <h1>json ui 遊び方画面変換</h1>
+  <p>文章を下に入力するか、コピペしてください。</p>
+  <textarea id="honbun" style="width:100%; height:200px;"></textarea>
+  <input type="button" onclick="convert();" value="変換" style="width:100%; height:30px;">
+  <p>↓結果↓</p>
+
+  <h3>
+    <span id="correct"></span>
+  </h3>
+
+  <textarea id="result" style="width:100%; height:200px;" readonly></textarea>
+  <input type="button" id="copy_btn" onclick="copy_to_clip();" value="コピーする" style="width:100%; height:30px;" disabled>
+</body>
+<script>
+  function convert() {
+  	let honbun = document.getElementById("honbun").value
+  	let resultbox = document.getElementById("result")
+  	let copybtn = document.getElementById("copy_btn")
+  	copybtn.value = "コピーする";
+  
+  	let resultpanel = "\n"
+  
+  	for (let i = 0; i < honbun.split('\n').length; i++) {
+  		console.log(i)
+  		let currentgyou = honbun.split(/\r\n|\r|\n/)[i].replace(/\\/g, '\\\\').replace(/"/g, '\\"').replace(/\t/g, '\\t')
+  		if (i > 0) resultpanel = resultpanel + ',\n'
+  		if (currentgyou.startsWith('h>')) {
+  			resultpanel = resultpanel + `{ "howtoplay_${i.toString()}@how_to_play_common.header": {"$text": "${currentgyou.replace('h>', '')}"}}`
+  			continue
+  		}
+  
+  		if (currentgyou.startsWith('i>')) {
+  			resultpanel = resultpanel + `{ "howtoplay_${i.toString()}@how_to_play_common.image": {"texture": "${currentgyou.replace('i>', '')}"}}`
+  			continue
+  		}
+
+  		if (currentgyou.startsWith('htp:h>')) {
+  			resultpanel = resultpanel + `{ "howtoplay_${i.toString()}@how_to_play_common.header": {"$text": "${currentgyou.replace('htp:h>', '')}"}}`
+  			continue
+  		}
+  
+  		if (currentgyou.startsWith('htp:i>')) {
+  			resultpanel = resultpanel + `{ "howtoplay_${i.toString()}@how_to_play_common.image": {"texture": "${currentgyou.replace('htp:i>', '')}"}}`
+  			continue
+  		}
+  
+  		resultpanel = resultpanel + `{ "howtoplay_${i.toString()}@how_to_play_common.paragraph": {"$text": "${currentgyou}"}}`
+  	}
+  	resultbox.value = resultpanel
+  	copybtn.disabled = false
+  }
+  
+  function copy_to_clip() {
+  	let resultbox = document.getElementById("result")
+  	let copybtn = document.getElementById("copy_btn")
+  	if (navigator.clipboard) {
+  		navigator.clipboard.writeText(resultbox.value)
+  		copybtn.value = "コピーしました!";
+  	}
+  }
+</script>
+</html>
