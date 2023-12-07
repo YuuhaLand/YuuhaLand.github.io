@@ -220,7 +220,7 @@ let adlist = {
 			name: "Item ID Auxを見れるやつ",
 			description: "アイテムのItem ID Auxをインベントリから見れます。<br>タッチ非対応です",
       type: ["リソースパック"],
-      junban: 27,
+      junban: 28,
 			icon_url: "https://github.com/Gotemba912/item-id-aux-hyouzi/blob/main/pack_icon.png?raw=true",
 			link: "https://github.com/Gotemba912/item-id-aux-hyouzi/releases/latest"
 		}
