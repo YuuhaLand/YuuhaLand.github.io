@@ -24,7 +24,20 @@
 		<div class="contenten">
 			<h2>ゆうは作 マイクラ統合版アドオンたち</h2>
 			マイクラ統合版で使えるいろんなアドオンを配布しています。<br>
-			<span id="listcount"></span><br>
+      <p style="text-align: right;">
+        並べ替え: 
+        <select id="narabekae" onchange="yomikomi()">
+          <option id="aiueo">あいうえお順</option>
+          <option id="atarasii">新しい順</option>
+          <option id="hurui">古い順</option>
+        </select>
+        　絞り込む: 
+        <select id="siborikomi" onchange="yomikomi()">
+          <option id="defalut">全部</option>
+          <option id="リソースパック">リソースパック</option>
+          <option id="ビヘイビアーパック">ビヘイビアーパック</option>
+        </select>
+      </p>
 			<div id="addon_list_div"></div>
 			<script type="text/javascript" src="../footer.js"></script>
 		</div>
@@ -32,18 +45,50 @@
 	<div style="height: 35px;"></div>
 </body>
 
+<style>
+  select {
+    font-size: large;
+  }
+  .risopa {
+    background-color: #ffc26d;
+    border-radius: 4px;
+    padding: 2px;
+    margin: 2px;
+  }
+  .bihepa {
+    background-color: #9bdd54;
+    border-radius: 4px;
+    padding: 2px;
+    margin: 2px;
+  }
+</style>
+
 <script type="text/javascript">
 
-  function zenbu_yomikomi() {
-	  for (const obj of adlist.addon_list) {
-	  	let addon_list_div = document.getElementById('addon_list_div');
+  function yomikomi() {
+		while (addon_list_div.firstChild) {
+			addon_list_div.removeChild(addon_list_div.firstChild)
+		}
+    let adoonn = adlist.addon_list
+    switch (document.getElementById("narabekae").selectedOptions[0].id) {
+      case "aiueo" : adoonn.sort((a, b) => a.name.localeCompare(b.name)); break
+      case "atarasii" : adoonn.sort((a, b) => b.junban - a.junban); break
+      case "hurui" : adoonn.sort((a, b) => a.junban - b.junban); break
+    }
+	  for (const obj of adoonn) {
+      let siborikomi = document.getElementById("siborikomi").selectedOptions[0].id
+      if (!(siborikomi === "defalut")) if (!obj.type.includes(siborikomi)) continue
+
+
+	  	let addon_list_div = document.getElementById('addon_list_div')
 	  	let pack_flame = document.createElement('div')
-	  	pack_flame.classList.add("pack_flame");
-	  	addon_list_div.appendChild(pack_flame);
-	  	pack_flame.innerHTML = `<img src="${obj.icon_url}" witdh=80 height=80><div class="text_content"><span class="pack_name"><a href="${obj.link}">${obj.name}</a></span><br>${obj.description}</div>`
+	  	pack_flame.classList.add("pack_flame")
+	  	addon_list_div.appendChild(pack_flame)
+      
+	  	pack_flame.innerHTML = `<img src="${obj.icon_url}" witdh=80 height=80><div class="text_content"><span class="pack_name"><a href="${obj.link}">${obj.name}</a></span><br>${obj.description}<br>${obj.type.includes("リソースパック") ? `<span class="risopa">リソースパック</span>` : ``}${obj.type.includes("ビヘイビアーパック") ? `<span class="bihepa">ビヘイビアーパック</span>` : ``}</div>`
 	  }
   }
-  zenbu_yomikomi()
+  yomikomi()
 </script>
 
 </html>
