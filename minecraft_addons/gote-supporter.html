@@ -29,22 +29,41 @@
 				</div>
 			</div>
 
-			<p>このアドオンはマイクラに便利な機能などを追加するリソースパックです！</p>
+			<h2>アップデート情報 <span id="version"></span></h2>
+      <div id="update" style="line-height: 21px;">アプデ情報を読み込み中です。。。</div>
 
-			<h2>配布サイト</h2>
+			<h2>ダウンロード</h2>
+      <p>
+        ここから最新のGote-Supporterをダウンロードできます！
+      </p>
+      <a id="download" target="_blank" style="font-size: x-large; background-color: #f5e8ef; padding: 5px; margin: 5px;"></a>
+      <p id="download_count"></p>
+      <p>
+        <a href="https://github.com/Gotemba912/Gote-Supporter/releases/latest" target="_blank">Githubでみる</a>
+      </p>
 
-			<p>このアドオンは次のサイトで配布されています。<br>
-				どのサイトで見ますか？</p>
+			<h2>紹介ページを見る</h2>
 
 			<p>
-				<a href="https://gote-server-yuka.blogspot.com/2021/09/gote-supporter.html" alt="Yuka's Blog (日本語)" title="Yuka's Blog (日本語)">Yuka's Blog (日本語)</a><br>
+        このアドオンは次のサイトで紹介されています。
+      </p>
+
+			<p>
+				<a href="https://gote-server-yuka.blogspot.com/2021/09/gote-supporter.html" alt="ゆうはのブログ (日本語)" title="ゆうはのブログ (日本語)">ゆうはのブログ (日本語)</a><br>
 				<a href="https://mcpedl.com/gote-supporter" alt="MCPEDL (英語)" title="MCPEDL (英語)">MCPEDL (英語)</a><br>
-				<a href="https://github.com/Gotemba912/Gote-Supporter/releases/latest" alt="Github" title="Github">Github</a>
+				<a href="https://github.com/Gotemba912/Gote-Supporter/" alt="Github (日本語)" title="Github (日本語)">Github (日本語)</a>
 			</p>
 
+			<h2>Gote-Supporter Config</h2>
+
+			<p>
+        Gote-Supporterでは、パックの設定を変更できる「Config」が使えます。<br>
+				詳しくはこちら<br>
+        <a href="https://github.com/Gotemba912/Gote-Supporter/wiki/Config(Japanese)">Config(Japanese) · Gotemba912/Gote-Supporter Wiki (github.com)</a>
+      </p>
 			<p>
         Gote-Supporter Config生成ツールはこちら<br>
-        <a href="./gote-supporter-config/">Gote-Supporter Config ジュネレーター</a>
+        <a href="./gote-supporter-config/">Gote-Supporter Config ジェネレーター</a>
 			</p>
 
 			<script type="text/javascript" src="../footer.js"></script>
@@ -52,5 +71,74 @@
 	</div>
 	<div style="height: 35px;"></div>
 </body>
+
+<style>/* ChatGPTちゃんまぢ感謝感謝^～^ */
+
+  .custom-list {
+    list-style-type: none;
+  }
+
+  .custom-list-item::before {
+    content: "●";
+    margin-right: 8px;
+  }
+</style>
+
+<Script> //ChatGPTちゃんまぢ感謝感謝^～^
+  function sumAllCounts(data) {
+    return data.reduce((total, item) => {
+      const assetCounts = item.assets.map(asset => asset.download_count || 0);
+      return total + assetCounts.reduce((assetTotal, download_count) => assetTotal + download_count, 0);
+    }, 0);
+  }
+
+  function htmlEncode(str) {   //ChatGPTちゃんまぢ感謝感謝！
+    return String(str).replace(/[&<>"'\/]/g, function (s) {
+      return entityMap[s];
+    });
+  }
+
+  const entityMap = {   //ChatGPTちゃんまぢ感謝感謝！
+    "&": "&amp;",
+    "<": "&lt;",
+    ">": "&gt;",
+    '"': '&quot;',
+    "'": '&#39;',
+    "/": '&#x2F;'
+  };
+
+  
+  fetch("https://api.github.com/repos/Gotemba912/Gote-Supporter/releases")
+  .then(response => response.text())
+  .then(data => {
+    const gote = JSON.parse(data)
+    document.getElementById("version").innerText = gote[0].tag_name
+    document.getElementById("download").innerText = gote[0].assets[0].name
+    document.getElementById("download").href = gote[0].assets[0].browser_download_url
+    document.getElementById("download_count").innerText = `これまで${(sumAllCounts(gote) + 127696).toLocaleString()}回ダウンロードされました！！\n※mediafireで配布していた頃のカウントも含む`
+
+    let bodyy = htmlEncode(gote[0].body)
+    let items = bodyy.split('\n')
+    let outputHTML = '<ul class="custom-list">'
+    for (let i = 0; i < items.length; i++) {
+      if (items[i].trim().startsWith('- ')) {
+        outputHTML += '<li class="custom-list-item">' + items[i].substring(2) + '</li>'
+      } else {
+        outputHTML += '<li>' + items[i] + '</li>'
+      }
+    }
+    outputHTML += '</ul>'
+
+    document.getElementById('update').innerHTML = outputHTML
+  })
+  .catch(error => {
+
+    document.getElementById("version").innerText = ""
+    document.getElementById("update").innerText = "アプデ情報を読み込めませんでした。。。"
+    document.getElementById("download").innerText = "Githubからダウンロード"
+    document.getElementById("download").href = "https://github.com/Gotemba912/Gote-Supporter/releases/latest"
+    console.error("エラーが発生しました: " + error)
+  })
+</script>
 
 </html>
