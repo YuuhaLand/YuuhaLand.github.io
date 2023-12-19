@@ -30,13 +30,16 @@
 			</div>
 
 			<h2>アップデート情報 <span id="version"></span></h2>
+      <span id="when"></span>
       <div id="update" style="line-height: 21px;">アプデ情報を読み込み中です。。。</div>
 
 			<h2>ダウンロード</h2>
       <p>
         ここから最新のGote-Supporterをダウンロードできます！
       </p>
-      <a id="download" target="_blank" style="font-size: x-large; background-color: #f5e8ef; padding: 5px; margin: 5px;"></a>
+      <p style="background-color: #f5e8ef; padding: 5px; margin: 5px;">
+        <a id="download" target="_blank"></a>
+      </p>
       <p id="download_count"></p>
       <p>
         <a href="https://github.com/Gotemba912/Gote-Supporter/releases/latest" target="_blank">Githubでみる</a>
@@ -72,18 +75,6 @@
 	<div style="height: 35px;"></div>
 </body>
 
-<style>/* ChatGPTちゃんまぢ感謝感謝^～^ */
-
-  .custom-list {
-    list-style-type: none;
-  }
-
-  .custom-list-item::before {
-    content: "●";
-    margin-right: 8px;
-  }
-</style>
-
 <Script> //ChatGPTちゃんまぢ感謝感謝^～^
   function sumAllCounts(data) {
     return data.reduce((total, item) => {
@@ -112,10 +103,12 @@
   .then(response => response.text())
   .then(data => {
     const gote = JSON.parse(data)
+    const date = new Date(gote[0].published_at)
     document.getElementById("version").innerText = gote[0].tag_name
     document.getElementById("download").innerText = gote[0].assets[0].name
     document.getElementById("download").href = gote[0].assets[0].browser_download_url
     document.getElementById("download_count").innerText = `これまで${(sumAllCounts(gote) + 127696).toLocaleString()}回ダウンロードされました！！\n※mediafireで配布していた頃のカウントも含む`
+    document.getElementById("when").innerText = `${date.getFullYear()}年${date.getMonth()+1}月${date.getDate()}日に配信`
 
     let bodyy = htmlEncode(gote[0].body)
     let items = bodyy.split('\n')
