@@ -2,14 +2,15 @@
 <html lang="ja">
 
 <head>
-  <title>Gote-Supporter Config ジュネレーター</title>
+	<title>Gote-Supporter Config ジェネレーター - 優夢色</title>
+	<link rel="stylesheet" type="text/css" href="../../style.css">
   <link rel="icon" href="https://gotemba912.github.io/favicon.ico">
   <meta charset="utf-8" />
   <meta name="Description" content="Gote-SupporterのConfigを生成できます。" />
   <meta name="theme-color" content="#42ce6c" />
   <meta property="og:description" content="Gote-SupporterのConfigを生成できます。" />
   <meta property="og:site_name" content="ゆうはくおりてぃー" />
-  <meta property="og:title" content="Gote-Supporter Config ジュネレーター" />
+  <meta property="og:title" content="Gote-Supporter Config ジェネレーター - 優夢色" />
   <meta name="viewport" content="width=device-width,initial-scale=1.0">
   <meta name="robots" content="noindex,nofollow,noarchive" />
 </head>
@@ -19,11 +20,21 @@
 <script src="./file/pack_icon.png.js"></script>
 
 <body>
-  <div class="main">
-    <div style="padding: 10px;">
-      <h1>
+	<script type="text/javascript" src="../../header.js"></script>
+	<div id="main_content">
+		<div style="height: 45px;"></div>
+		<script type="text/javascript" src="../../title.js"></script>
+		<div class="contenten">
+			<div class="pack_flame">
+				<img src="https://github.com/Gotemba912/Gote-Supporter/blob/main/pack_icon.png?raw=true" witdh=80 height=80>
+				<div class="text_content">
+					<span class="pack_name">Gote-Supporter</span><br>
+					マイクラを快適に便利に楽しめるように設計されたUIリソースパックです!
+				</div>
+			</div>
+      <h2>
         Gote-Supporter Config Generator
-      </h1>
+      </h2>
       <p>
         このツールではGote-Supporter Configパックを作ることが出来ます！！
       </p>
@@ -31,12 +42,19 @@
         Gote-Supporter Configについて、詳しくはコチラをご覧ください！<br>
         <a href="https://github.com/Gotemba912/Gote-Supporter/wiki/Config(Japanese)" target="_blank">https://github.com/Gotemba912/Gote-Supporter/wiki/Config(Japanese)</a>
       </p>
+      <p>
+        (ホントは英語対応化とかしたかったけどそもそも言語切替とかどうやるんDa？？？ ってなったので出来ません())<br>
+        Sorry, but you'll have to use your browser's translate function for English and other languages.
+      </p>
       <h2>オプション</h2>
       <label><input type="checkbox" id="hud_compass">HUDにコンパスと時計を表示</label><br>
-      <label><input type="checkbox" id="show_recoverycompass">HUDのコンパスにリカバリーコンパスを追加(ベータ!)</label><br>
+      <label><input type="checkbox" id="start_screen_gamertag">スタート画面にゲーマータグとアイコンを表示</label><br>
+      <label><input type="checkbox" id="inventory_screen_statusbar">インベントリ画面などにHPや空腹度などを表示</label><br>
+      <label><input type="checkbox" id="chest_screen_paperdoll">チェスト画面などに自分の人形を表示</label><br>
       <label><input type="checkbox" id="show_hotbar_navigator">HUDのホットバーナビゲーターの表示(タッチ)</label><br>
       <label><input type="checkbox" id="play_screen_doubleclick">プレイ画面のワールドのボタンをダブルクリックしないと入れないようにする</label>
-      <p>
+      <label><input type="checkbox" id="show_recoverycompass">HUDのコンパスにリカバリーコンパスを追加(ベータ!)</label><br>
+      <p class="serek">
         HUDのF1/F8ボタンの位置(タッチ)<br>
         <select id="f1_f8_location">
           <option id="top">top - 上のチャットボタンなどと並べて表示 (デフォルト)</option>
@@ -44,7 +62,7 @@
           <option id="none">none - 非表示にする</option>
         </select>
       </p>
-      <p>
+      <p class="serek">
         チャット画面のTabキーの配置<br>
         <select id="chat_tab_button_type">
           <option id="vertical">vertical - 右下に並べて配置</option>
@@ -52,7 +70,7 @@
           <option id="none">none - 非表示にする</option>
         </select>
       </p>
-      <p>
+      <p class="serek">
         HUDでプレイヤーリストを表示するキー<br>
         <select id="playerlist_key">
           <option id="tab">tab - Tabキー</option>
@@ -77,24 +95,14 @@
         ⇩ できた_global_variables.json ⇩
         <textarea id="global_variables" readonly></textarea>
       </p>
-      <hr>
-      <p style="text-align: center;">
-        つくったひと: YuuhaLand
-      </p>
-    </div>
-  </div>
+
+			<script type="text/javascript" src="../../footer.js"></script>
+		</div>
+	</div>
+	<div style="height: 35px;"></div>
 </body>
 
 <style>
-  html {
-    background-color: #f0f0f0;
-  }
-
-  body {
-    color: black;
-    font-family: sans-serif;
-  }
-
   label {
     font-size: large;
     user-select: none;
@@ -116,27 +124,9 @@
     font-size: large;
     width: 80%;
   }
-  
-  .main {
-    background-color: white;
-    width: 1200px;
-    max-width: 100%;
-    margin: 0 auto;
-  }
 
-  h1 {
-    background-color: #e9e9e9;
-    padding: 5px;
-    border-radius: 5px;
-    border-bottom: 3px solid #ccc900;
-    text-align: center;
-  }
-
-  h2 {
-    background-color: #e9e9e9;
-    border-left: 3px solid #007acc;
-    padding: 6px;
-    text-align: left;
+  .serek {
+    overflow-x: auto;
   }
 </style>
 
@@ -145,9 +135,12 @@
 
     let global_variables = {
       "$hud_compass": document.getElementById("hud_compass").checked,
-      "$show_recoverycompass": document.getElementById("show_recoverycompass").checked,
+      "$start_screen_gamertag": document.getElementById("start_screen_gamertag").checked,
+      "$inventory_screen_statusbar": document.getElementById("inventory_screen_statusbar").checked,
+      "$chest_screen_paperdoll": document.getElementById("chest_screen_paperdoll").checked,
       "$show_hotbar_navigator": document.getElementById("show_hotbar_navigator").checked,
       "$play_screen_doubleclick": document.getElementById("play_screen_doubleclick").checked,
+      "$show_recoverycompass": document.getElementById("show_recoverycompass").checked,
       "$f1_f8_location": document.getElementById("f1_f8_location").selectedOptions[0].id,
       "$chat_tab_button_type": document.getElementById("chat_tab_button_type").selectedOptions[0].id,
       "$playerlist_key": document.getElementById("playerlist_key").selectedOptions[0].id
