@@ -223,6 +223,14 @@ let adlist = {
       junban: 28,
 			icon_url: "https://github.com/Gotemba912/item-id-aux-hyouzi/blob/main/pack_icon.png?raw=true",
 			link: "https://github.com/Gotemba912/item-id-aux-hyouzi/releases/latest"
+		},
+		{
+			name: "Unicodeフォント化",
+			description: "フォントをUnicodeフォント化します<br>言語 日本語がおすすめです!",
+      type: ["リソースパック"],
+      junban: 29,
+			icon_url: "https://github.com/Gotemba912/compulsion-unicode-font/blob/main/pack_icon.png?raw=true",
+			link: "./compulsion-unicode-font.html"
 		}
 	]
 }
