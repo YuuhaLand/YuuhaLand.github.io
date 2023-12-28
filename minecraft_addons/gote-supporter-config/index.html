@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <html lang="ja">
 
 <head>
@@ -46,13 +45,21 @@
         (ホントは英語対応化とかしたかったけどそもそも言語切替とかどうやるんDa？？？ ってなったので出来ません())<br>
         Sorry, but you'll have to use your browser's translate function for English and other languages.
       </p>
+      <h2>テンプレート</h2>
+      <div style="text-align: center;">
+        <input type="button" class="button" value="デフォルト" onclick="temprete('default')">
+        <input type="button" class="button" value="Gote-Supporter Lite" onclick="temprete('lite')">
+      </div>
       <h2>オプション</h2>
       <label><input type="checkbox" id="hud_compass">HUDにコンパスと時計を表示</label><br>
       <label><input type="checkbox" id="start_screen_gamertag">スタート画面にゲーマータグとアイコンを表示</label><br>
+      <label><input type="checkbox" id="show_gote_version">スタート画面にGote-Supporterの情報を表示</label><br>
+      <label><input type="checkbox" id="show_build_number">スタート画面にマイクラのビルド番号を表示</label><br>
       <label><input type="checkbox" id="inventory_screen_statusbar">インベントリ画面などにHPや空腹度などを表示</label><br>
       <label><input type="checkbox" id="chest_screen_paperdoll">チェスト画面などに自分の人形を表示</label><br>
       <label><input type="checkbox" id="show_hotbar_navigator">HUDのホットバーナビゲーターの表示(タッチ)</label><br>
-      <label><input type="checkbox" id="play_screen_doubleclick">プレイ画面のワールドのボタンをダブルクリックしないと入れないようにする</label>
+      <label><input type="checkbox" id="show_hotbar_number">ホットバーに数字を表示</label><br>
+      <label><input type="checkbox" id="play_screen_doubleclick">プレイ画面のワールドのボタンをダブルクリックしないと入れないようにする</label><br>
       <label><input type="checkbox" id="show_recoverycompass">HUDのコンパスにリカバリーコンパスを追加(ベータ!)</label><br>
       <p class="serek">
         HUDのF1/F8ボタンの位置(タッチ)<br>
@@ -123,6 +130,7 @@
   .button {
     font-size: large;
     width: 80%;
+    margin-bottom: 3px;
   }
 
   .serek {
@@ -131,14 +139,52 @@
 </style>
 
 <script>
+  function temprete(a="default") {
+    if (a === "default") {
+      document.getElementById("hud_compass").checked = true
+      document.getElementById("start_screen_gamertag").checked = true
+      document.getElementById("show_gote_version").checked = true
+      document.getElementById("show_build_number").checked = false
+      document.getElementById("inventory_screen_statusbar").checked = true
+      document.getElementById("chest_screen_paperdoll").checked = true
+      document.getElementById("show_hotbar_navigator").checked = false
+      document.getElementById("show_hotbar_number").checked = false
+      document.getElementById("play_screen_doubleclick").checked = true
+      document.getElementById("show_recoverycompass").checked = false
+      document.getElementById("f1_f8_location").selectedIndex = 0
+      document.getElementById("chat_tab_button_type").selectedIndex = 0
+      document.getElementById("playerlist_key").selectedIndex = 0
+      return
+    }
+
+    if (a === "lite") {
+      document.getElementById("hud_compass").checked = false
+      document.getElementById("start_screen_gamertag").checked = false
+      document.getElementById("show_gote_version").checked = false
+      document.getElementById("show_build_number").checked = false
+      document.getElementById("inventory_screen_statusbar").checked = false
+      document.getElementById("chest_screen_paperdoll").checked = false
+      document.getElementById("show_hotbar_navigator").checked = false
+      document.getElementById("show_hotbar_number").checked = false
+      document.getElementById("play_screen_doubleclick").checked = false
+      document.getElementById("show_recoverycompass").checked = false
+      document.getElementById("f1_f8_location").selectedIndex = 0
+      document.getElementById("chat_tab_button_type").selectedIndex = 1
+      document.getElementById("playerlist_key").selectedIndex = 0
+      return
+    }
+  }
   function mcpack(daunr="mcpack") {
 
     let global_variables = {
       "$hud_compass": document.getElementById("hud_compass").checked,
       "$start_screen_gamertag": document.getElementById("start_screen_gamertag").checked,
+      "$show_gote_version": document.getElementById("show_gote_version").checked,
+      "$show_build_number": document.getElementById("show_build_number").checked,
       "$inventory_screen_statusbar": document.getElementById("inventory_screen_statusbar").checked,
       "$chest_screen_paperdoll": document.getElementById("chest_screen_paperdoll").checked,
       "$show_hotbar_navigator": document.getElementById("show_hotbar_navigator").checked,
+      "$show_hotbar_number": document.getElementById("show_hotbar_number").checked,
       "$play_screen_doubleclick": document.getElementById("play_screen_doubleclick").checked,
       "$show_recoverycompass": document.getElementById("show_recoverycompass").checked,
       "$f1_f8_location": document.getElementById("f1_f8_location").selectedOptions[0].id,
