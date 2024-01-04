@@ -14,11 +14,9 @@ a {
 }
 
 img {
-  image-rendering: pixelated;
 }
 
 img.kouka {
-  image-rendering: auto;
 }
 
 ::selection {

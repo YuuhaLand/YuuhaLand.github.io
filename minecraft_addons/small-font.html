@@ -1,0 +1,85 @@
+<html lang="ja">
+
+<head>
+	<title>日本語フォントを小さくするリソースパック - 優夢色</title>
+	<link rel="stylesheet" type="text/css" href="../style.css">
+	<link rel="icon" href="https://gotemba912.github.io/favicon.ico">
+	<meta charset="utf-8" />
+	<meta name="Description" content="大きくなった日本語フォントを小さくする！ グロリソ禁止ワールドでも機能します！" />
+	<meta name="theme-color" content="#42ce6c" />
+	<meta property="og:description" content="大きくなった日本語フォントを小さくする！ グロリソ禁止ワールドでも機能します！" />
+	<meta property="og:site_name" content="ゆうはくおりてぃー" />
+	<meta property="og:title" content="日本語フォントを小さくするリソースパック - 優夢色" />
+  <meta property="og:image" content="https://github.com/Gotemba912/compulsion-unicode-font/blob/main/pack_icon.png?raw=true"/>
+	<meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <meta name="robots" content="noindex,nofollow,noarchive" />
+</head>
+
+<body>
+	<script type="text/javascript" src="../header.js"></script>
+	<div id="main_content">
+		<div style="height: 45px;"></div>
+		<script type="text/javascript" src="../title.js"></script>
+		<div class="contenten">
+			<div class="pack_flame">
+				<img src="https://github.com/Gotemba912/small-font/blob/main/pack_icon.png?raw=true" witdh=80 height=80>
+				<div class="text_content">
+					<span class="pack_name">日本語フォントを小さくするリソースパック</span><br>
+					大きくなった日本語フォントを小さくする<br>グロリソ禁止ワールドでも機能します！!
+				</div>
+			</div>
+      <p>
+        大きくなってしまった日本語フォントを再び元の大きさに戻すリソースパック！<br>
+        グローバルリソースに適用し、マイクラを再起動すれば、すべてのサーバーで機能します！<br>
+        Hiveなどで絵文字が文字に重なって見えづらくなる問題もこのリソースパックで直ります！！
+      </p>
+
+      <p style="color: red;font-weight: bold;">
+        ※サーバーに適用しても機能しません！ グローバルリソースに適用して下さい！<br>
+        ※グローバルリソースに適用したら、マイクラを一度再起動して下さい！
+      </p>
+
+			<div style="text-align:center;">
+      <h3>ビフォー</h3>
+			<img src="./textures/small-font/01.png" alt="ビフォー" title="ビフォー" style="max-width: 100%; height: auto;"><br>
+
+      <h3>アフター</h3>
+			<img src="./textures/small-font/02.png" alt="アフター" title="アフター" style="max-width: 100%; height: auto;"><br>
+			
+      </div>
+
+			<h2>ダウンロード</h2>
+      <p>
+        ここから最新の「日本語フォントを小さくするリソースパック」をダウンロードできます！
+      </p>
+      <p style="background-color: #f5e8ef; padding: 5px; margin: 5px;">
+        <a id="download"></a>
+      </p>
+      <p>
+        <a href="https://github.com/Gotemba912/small-font/releases/latest" target="_blank">Githubでみる</a>
+      </p>
+
+			<script type="text/javascript" src="../footer.js"></script>
+		</div>
+	</div>
+	<div style="height: 35px;"></div>
+</body>
+
+<Script> //ChatGPTちゃんまぢ感謝感謝^～^
+
+  fetch("https://api.github.com/repos/Gotemba912/small-font/releases")
+  .then(response => response.text())
+  .then(data => {
+    const gote = JSON.parse(data)
+    document.getElementById("download").innerText = gote[0].assets[0].name
+    document.getElementById("download").href = gote[0].assets[0].browser_download_url
+
+  })
+  .catch(error => {
+    document.getElementById("download").innerText = "Githubからダウンロード"
+    document.getElementById("download").href = "https://github.com/Gotemba912/small-font/releases/latest"
+    console.error("エラーが発生しました: " + error)
+  })
+</script>
+
+</html>
