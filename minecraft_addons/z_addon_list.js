@@ -231,6 +231,14 @@ let adlist = {
       junban: 29,
 			icon_url: "https://github.com/Gotemba912/compulsion-unicode-font/blob/main/pack_icon.png?raw=true",
 			link: "./compulsion-unicode-font.html"
+		},
+		{
+			name: "日本語フォントを小さくするリソースパック",
+			description: "大きくなった日本語フォントを小さくする<br>グロリソ禁止ワールドでも機能します！!",
+      type: ["リソースパック"],
+      junban: 30,
+			icon_url: "https://github.com/Gotemba912/small-font/blob/main/pack_icon.png?raw=true",
+			link: "./small-font.html"
 		}
 	]
 }
