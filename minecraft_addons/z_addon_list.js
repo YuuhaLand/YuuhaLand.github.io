@@ -239,6 +239,14 @@ let adlist = {
       junban: 30,
 			icon_url: "https://github.com/Gotemba912/small-font/blob/main/pack_icon.png?raw=true",
 			link: "./small-font.html"
+		},
+		{
+			name: "MCPE Alpha StartScreen",
+			description: "アルファ時代のスタート画面を再現しました。",
+      type: ["リソースパック"],
+      junban: 31,
+			icon_url: "https://github.com/Gotemba912/alpha_startscreen/blob/main/pack_icon.png?raw=true",
+			link: "https://github.com/Gotemba912/alpha_startscreen/releases/latest"
 		}
 	]
 }
