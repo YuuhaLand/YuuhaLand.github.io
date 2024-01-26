@@ -247,6 +247,14 @@ let adlist = {
       junban: 31,
 			icon_url: "https://github.com/Gotemba912/alpha_startscreen/blob/main/pack_icon.png?raw=true",
 			link: "https://github.com/Gotemba912/alpha_startscreen/releases/latest"
+		},
+		{
+			name: "即抜けRTA",
+			description: "即抜けを検知して通知します!",
+      type: ["ビヘイビアーパック"],
+      junban: 32,
+			icon_url: "https://github.com/Gotemba912/Maikura_de_Sokunuke_RTA/blob/main/pack_icon.png?raw=true",
+			link: "https://github.com/Gotemba912/Maikura_de_Sokunuke_RTA/releases/latest"
 		}
 	]
 }
