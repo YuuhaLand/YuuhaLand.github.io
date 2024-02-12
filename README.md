@@ -1,4 +1,4 @@
-# <https://gotemba912.github.io>
+# <https://yuuhaland.github.io>
 
 「優夢色」  
 夢が広がる優しい世界。
