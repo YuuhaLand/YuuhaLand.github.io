@@ -255,6 +255,14 @@ let adlist = {
       junban: 32,
 			icon_url: "https://github.com/YuuhaLand/Maikura_de_Sokunuke_RTA/blob/main/pack_icon.png?raw=true",
 			link: "https://github.com/YuuhaLand/Maikura_de_Sokunuke_RTA/releases/latest"
+		},
+		{
+			name: "OreUI風 ポップアップ",
+			description: "ポップアップダイアログをOreUI風にします",
+      type: ["リソースパック"],
+      junban: 33,
+			icon_url: "https://github.com/YuuhaLand/OreUI-Popup/blob/main/pack_icon.png?raw=true",
+			link: "https://github.com/YuuhaLand/OreUI-Popup/releases/latest"
 		}
 	]
 }
