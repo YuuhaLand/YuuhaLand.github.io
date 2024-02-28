@@ -37,7 +37,7 @@ label {
 pre{
   background-color: #1e1e1e;
   color: #d4d4d4;
-  font-family: 'MS Mincho';
+  font-family: 'MS Mincho', Consolas, 'Courier New', monospace;
   font-size: 14px;
   padding: 6px;
   overflow-x: scroll;
