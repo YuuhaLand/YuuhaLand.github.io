@@ -263,6 +263,14 @@ let adlist = {
       junban: 33,
 			icon_url: "https://github.com/YuuhaLand/OreUI-Popup/blob/main/pack_icon.png?raw=true",
 			link: "https://github.com/YuuhaLand/OreUI-Popup/releases/latest"
+		},
+		{
+			name: "Java風 HUDチャット +アニメーション",
+			description: "HUDのチャットをJava版のように右下に表示します。 アニメーション付き！",
+      type: ["リソースパック"],
+      junban: 34,
+			icon_url: "https://github.com/YuuhaLand/Java-Stuyle-Chat/blob/main/pack_icon.png?raw=true",
+			link: "./java_style_chat.html"
 		}
 	]
 }
